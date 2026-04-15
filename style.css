@@ -18,32 +18,85 @@ body {
 .header_Login {
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    padding: 0 100px 0 64px;
 }
 
 .logInHeader {
     display: flex;
     gap: 20px;
-    align-items: center;
+    padding: 100px;
+
 
 }
+
 .btnContainer {
-    display: flex;
-    align-items: center;
     gap: 35px;
 }
 
 .btn1 {
-    font-weight: 600;
+    font-weight: bold;
     color: #ffffff;
     background-color: #2A3647;
     border-radius: 8px;
     padding: 12px 12px;
     border: none;
 }
+
 .btn1:hover {
     background-color: #29ABE2;
     cursor: pointer;
     box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.3);
+}
+
+.btn2 {
+    font-weight: bolder;
+    color: #2A3647;
+    background-color: transparent;
+    border-radius: 8px;
+    padding: 12px 12px;
+    border: 2px solid #2A3647;
+}
+.btn2:hover {
+    background-color: transparent;
+     border: 2px solid #29ABE2;
+    color: #29ABE2;
+    cursor: pointer;
+    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.3);
+}
+
+.notUser {
+    padding: 10px;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+}
+
+.loginCard {
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 40px;
+    width: 400px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.loginTitle{
+    text-align: center;
+}
+
+input {
+    width: 300px;
+    padding: 8px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.btnLogIn{
+    display: flex;
+    justify-content: space-around;
 }
