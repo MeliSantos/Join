@@ -1,27 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Join</title>
+    <link rel="stylesheet" href="./style.css">
     <link rel="stylesheet" href="./styles/sign-up.css">
-    <link rel="stylesheet" href="style.css">
+
 </head>
+
 <body>
     <header>
         <div class="header_Login">
             <div>
                 <img class="logo" src="./assets/img/Capa 2.png" alt="Join Logo">
             </div>
-            <div class="logInHeader">
-                <div>
-                    <div> Not a Join user?</div>
+    </header>
+
+    <main>
+
+        <div class="SignUpCard">
+            <div>
+                <div class="logInSection">
+                    <h1 class="loginTitle">Sign up</h1>
+                    <div class="blueLine"></div>
                 </div>
-                <div class="btnContainer">
-                    <button class="btn1">Sign up</button>
-                </div>
+                <form class="loginForm">
+                    <div class="inputGroup">
+                        <input type="Name" id="Name" name="Name" placeholder="Name" required>
+                        <img src="./assets/img/mail.png" class="inputIcon">
+                    </div>
+                    <div class="inputGroup">
+                        <input type="email" id="email" name="email" placeholder="Email" required>
+                        <img src="./assets/img/mail.png" class="inputIcon">
+                    </div>
+                    <div class="inputGroup">
+                        <input type="password" id="password" name="password" placeholder="Password" required>
+                        <img src="./assets/img/lock.png" class="inputIcon">
+                    </div>
+                    <div class="inputGroup">
+                        <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm Password" required>
+                        <img src="./assets/img/lock.png" class="inputIcon">
+                    </div>
+                    <div class="btnLogIn">
+                        <button type="submit" class="btn1 btnSignUpContent">Sign up</button>
+                    </div>
+                </form>
             </div>
         </div>
-    </header>
+
+    </main>
+
+    <footer>
+        <div class="footerContent">
+            <a href="#" class="footerText">Privacy Policy</a>
+            <a href="#" class="footerText">Legal Notice</a>
+        </div>
+    </footer>
 </body>
+<script src="script.js"></script>
+
 </html>
