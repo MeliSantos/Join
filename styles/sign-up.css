@@ -63,3 +63,40 @@ input[type="checkbox"] {
 .checkbox:hover {
     cursor: pointer;
 }
+
+.logInSection {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.arrowLeft {
+   position: absolute;
+    left: -20px;
+    top: 50%;
+    transform: translateY(-60%);
+    background-image: url('../assets/img/arrow-left-line.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 32px;
+    height: 32px;
+    border: none;
+    background-color: transparent;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+}
+
+.arrowLeft:hover {
+    cursor: pointer;
+    background-color: #f0f0f0;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    transform: translateY(-60%) scale(1.05);
+    padding: 8px;
+}
