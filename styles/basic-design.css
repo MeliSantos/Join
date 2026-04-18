@@ -36,6 +36,7 @@ body {
     align-items: center;
     width: 104px;
     height: 56px;
+    margin-right: 16px;
 }
 
 .helpIcon {
