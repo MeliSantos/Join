@@ -21,7 +21,7 @@
     border-radius: 25px;
     padding: 40px;
     width: 500px;
-    height: 450px;
+    height: 530px;
     box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
     display: flex;
     align-items: center;
@@ -76,7 +76,7 @@ input[type="checkbox"] {
    position: absolute;
     left: -20px;
     top: 50%;
-    transform: translateY(-60%);
+    transform: translateY(-110%);
     background-image: url('../assets/img/arrow-left-line.png');
     background-size: contain;
     background-repeat: no-repeat;
@@ -95,8 +95,8 @@ input[type="checkbox"] {
     cursor: pointer;
     background-color: #f0f0f0;
     border-radius: 50%;
-    width: 40px;
-    height: 40px;
-    transform: translateY(-60%) scale(1.05);
+    width: 20px;
+    height: 20px;
+    transform: translateY(-110%) scale(1.05);
     padding: 8px;
 }
