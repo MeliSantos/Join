@@ -19,7 +19,37 @@ body {
     width: 1440px;
     height: 96px;
     box-shadow: 0px 4px 4px 0px #0000001A;
-;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.textHeader {
+    font-family: 'Inter';
+    font-size: 20px;
+    font-weight: 400;
+    margin-left: 348px;
+}
+
+.infoRight {
+    display: flex;
+    align-items: center;
+    width: 104px;
+    height: 56px;
+}
+
+.helpIcon {
+    width: 32px;
+    height: 32px;
+}
+
+.userIcon {
+    background-color: white;
+    width: 56px;
+    height: 56px;
+    margin-left: 16px;
+    border: 2px solid black;
+    border-radius: 50%;
 }
 
 .navLeftSide {
@@ -66,4 +96,20 @@ body {
 .navButton:hover {
     background-color: #091931;
     cursor: pointer;
+}
+
+.navFooter {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    width: 232px;
+    height: 317px;
+    margin-top: 64px;
+}
+
+.navFooter a {
+    text-decoration: none;
+    color: #a8a8a8;
+    margin-bottom: 8px;
 }
