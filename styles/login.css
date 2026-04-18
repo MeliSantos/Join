@@ -1,0 +1,156 @@
+
+.logo {
+    width: 100px;
+    padding: 64px;
+    height: 125px;
+}
+
+.header_Login {
+    display: flex;
+    justify-content: space-between;
+}
+
+.logInHeader {
+    display: flex;
+    gap: 20px;
+    padding: 100px;
+}
+
+.btnContainer {
+    gap: 35px;
+}
+
+.btn1 {
+    font-weight: bold;
+    color: #ffffff;
+    background-color: #2A3647;
+    border-radius: 8px;
+    padding: 12px 12px;
+    border: none;
+}
+
+.btn1:hover {
+    background-color: #29ABE2;
+    cursor: pointer;
+    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.3);
+}
+
+.btn2 {
+    font-weight: bolder;
+    color: #2A3647;
+    background-color: transparent;
+    border-radius: 8px;
+    padding: 12px 12px;
+    border: 2px solid #2A3647;
+}
+
+.btn2:hover {
+    background-color: transparent;
+    border: 2px solid #29ABE2;
+    color: #29ABE2;
+    cursor: pointer;
+    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.3);
+}
+
+.notUser {
+    padding: 10px;
+}
+
+.loginCard {
+    background-color: #ffffff;
+    border-radius: 25px;
+    padding: 40px;
+    width: 500px;
+    height: 330px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.loginTitle {
+    text-align: center;
+    font-size: 60px;
+    font-weight: 700;
+    margin-block-end: 10px;
+    margin-block-start: 0;
+}
+
+input {
+    width: 350px;
+    padding: 10px 13px 10px 13px;
+    margin: 12px;
+    border: 1px solid #d1d1d1b3;
+    border-radius: 8px;
+    font-size: 18px
+}
+
+.btnLogIn {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 30px;
+}
+
+.logInSection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.blueLine {
+    width: 150px;
+    height: 3px;
+    background-color: #29ABE2;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.btnContent {
+    font-size: 20px;
+    padding: 10px 20px;
+    font-weight: 700;
+}
+
+::placeholder {
+    color: rgba(0, 0, 0, 0.2);
+    font-size: 18px;
+    opacity: 1;
+}
+
+.inputGroup {
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+.inputIcon {
+    position: absolute;
+    right: 25px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    pointer-events: none;
+}
+
+footer {
+    padding: 30px;
+    text-align: center;
+}
+
+.footerContent {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.footerText {
+    color: #A8A8A8;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.footerText:hover {
+    color: #29ABE2;
+    font-weight: bold;
+}
