@@ -21,11 +21,6 @@ main {
     flex: 1;
 }
 
-.navLeftSide {
-    width: 250px;
-    min-width: 250px;
-}
-
 .contentRight {
     flex: 1;
     margin-top: 100px;
@@ -66,12 +61,17 @@ h3 {
     gap: 30px;
 }
 
-.SummaryFirstCard {
+.summaryFirstCard {
     background-color: #ffffff;
     border-radius: 15px;
     width: 264px;
     height: 168px;
     box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+
 }
 
 .secondSectionSummary {
@@ -79,12 +79,15 @@ h3 {
     margin-top: 20px;
 }
 
-.SummarySecondCard {
+.summarySecondCard {
     background-color: #ffffff;
     border-radius: 15px;
     width: 560px;
     height: 168px;
     box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
 }
 
 .thirdSectionSummary {
@@ -93,31 +96,83 @@ h3 {
     margin-top: 20px;
 }
 
-.SummaryThirdCard {
+.summaryThirdCard {
     background-color: #ffffff;
     border-radius: 15px;
     width: 168px;
     height: 168px;
     box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-.mainDiv{
+
+.mainDiv {
     display: flex;
     flex-direction: row;
     align-items: center;
 }
- 
+
 .mainRight {
     display: flex;
     padding-top: 200px;
     align-items: center;
     width: 385px;
 }
+
 h2 {
     font-size: 47px;
     font-weight: 400;
     color: #2A3647;
 }
 
-.mainLeft{
+.mainLeft {
     width: 725px;
+}
+
+.tasksNumber {
+    font-size: 64px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.statusTasks {
+    font-size: 20px;
+    font-weight: 400;
+    text-align: center;
+}
+.secondCardLeft{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+.separationLine{
+    width: 2px;
+    border-radius: 8px;
+    height: 102px;
+    background-color: #D1D1D1;
+}
+.currentDate{
+    font-size: 21px;
+    font-weight: 700;
+    color: #2A3647;
+}
+.deadlineContent{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.subtext{
+    font-size: 16px;
+    font-weight: 400;
+    color: #2A3647;
+}
+
+.name {
+    color: #29ABE2;
+    font-weight: 700;
+    font-size: 64px;
 }
