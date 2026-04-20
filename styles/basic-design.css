@@ -106,11 +106,18 @@ body {
     justify-content: flex-end;
     width: 232px;
     height: 317px;
-    margin-top: 64px;
+    margin-top: 150px;
 }
 
 .navFooter a {
     text-decoration: none;
     color: #a8a8a8;
     margin-bottom: 8px;
+}
+
+.footerContent {
+    gap: 8px;
+    text-align: start;
+    display: flex;
+    flex-direction: column;
 }
