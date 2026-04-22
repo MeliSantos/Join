@@ -28,7 +28,7 @@
                     <h1 class="loginTitle">Sign up</h1>
                     <div class="blueLine"></div>
                 </div>
-                <form class="loginForm">
+                <form id="registerForm" class="loginForm">
                     <div class="inputGroup">
                         <input type="Name" id="Name" name="Name" placeholder="Name" required>
                         <img src="./assets/img/person.png" class="inputIcon">
@@ -49,6 +49,7 @@
                         <input class="checkbox" type="checkbox" id="option1" name="option1" value="ja">
                         <label for="terms" class="termsText">I accept the <a href="#" class="termsLink">Privacy Policy</a></label>
                     </checkbox>
+                    <div id="termsError" class="errorMessage"></div>
                     <div class="btnLogIn">
                         <button type="submit" class="btn1 btnSignUpContent">Sign up</button>
                     </div>

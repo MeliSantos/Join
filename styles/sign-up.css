@@ -64,6 +64,13 @@ input[type="checkbox"] {
     cursor: pointer;
 }
 
+.errorMessage {
+    color: #ff4444;
+    font-size: 14px;
+    margin-top: 8px;
+    display: block;
+}
+
 .logInSection {
     position: relative;
     display: flex;
