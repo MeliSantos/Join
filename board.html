@@ -7,7 +7,7 @@
     <title>Join</title>
     <link rel="stylesheet" href="./styles/basic-design.css">
     <link rel="stylesheet" href="./styles/board.css">
-    
+
 </head>
 
 <body>
@@ -42,16 +42,29 @@
                     <h1>Board</h1>
                 </div>
                 <div class="boardHeaderLeft">
-                    <div><input type="search" placeholder="Find Task"></div>
-                    <div><button class="btn1 btnContent">Add Task</button></div>
+                    <div class="inputSearch"><input type="search" placeholder="Find Task">
+                        <div class="separationLine"></div>
+                        <img src="./assets/img/search.png" alt="Search Icon" class="inputIcon">
+                    </div>
+                    <div><button class="btn1 btnContent">Add Task <img src="./assets/img/add.png"
+                                alt="Add Icon"></button>
+                    </div>
                 </div>
 
             </div>
-            <div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
+            <div class="taskStatus">
+                <div class="taskdiv">
+                    <div class="taskDivContent"> To do </div> <img src="./assets/img/plus button.png" alt="Add Icon">
+                </div>
+                <div class="taskdiv">
+                    <div class="taskDivContent"> In progress </div> <img src="./assets/img/plus button.png" alt="Add Icon">
+                </div>
+                <div class="taskdiv">
+                    <div class="taskDivContent"> Await feedback </div> <img src="./assets/img/plus button.png" alt="Add Icon">
+                </div>
+                <div class="taskdiv">
+                    <div class="taskDivContent"> Done </div>
+                </div>
             </div>
         </section>
     </main>
