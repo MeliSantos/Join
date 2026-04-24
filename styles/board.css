@@ -112,23 +112,52 @@ h1 {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 100%;
+    width: 1208px;
+    height: 24px;
     margin-top: 100px;
 }
 
-.taskdiv{
+.taskdiv {
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 244px;
 }
 
-.taskDivContent{
+.taskDivContent {
     color: #42526E;
     font-weight: bold;
     font-size: 20px;
 }
 
-::placeholder{
+::placeholder {
     color: #D1D1D1;
-    }
+}
+
+.taskContentSection {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 1208px;
+    height: 688px;
+    margin-top: 20px;
+}
+
+.tasksContent {
+    height: 688px;
+    width: 246px;
+}
+
+.noTask {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 246px;
+    height: 48px;
+    background-color: #E7E7E7;
+    border-radius: 8px;
+    color: #A8A8A8;
+    font-size: 16px;
+    border: 1px dashed #A8A8A8;
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.16);
+}
