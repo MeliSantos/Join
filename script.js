@@ -45,7 +45,16 @@ function sendToFirebase(user) {
     })
         .then(res => res.json())
         .then(data => {
-            console.log("Neue ID:", data.name);
+            const userWithId = {
+                id: data.name,   // 🔑 Firebase ID
+                ...user
+            };
+
+            console.log("User mit ID:", userWithId);
+
+            // Optional: direkt einloggen
+            localStorage.setItem("currentUser", JSON.stringify(userWithId));
+
             form.reset();
         });
 }
