@@ -6,7 +6,17 @@ form.addEventListener("submit", function (event) {
     const name = document.getElementById("Name").value;
     const email = document.getElementById("email").value;
     const password = document.getElementById("password").value;
+    const confirmPassword = document.getElementById("confirmPassword").value;
     const termsCheckbox = document.getElementById("option1").checked;
+
+    if (password !== confirmPassword) {
+        passwordError.textContent = "Die Passwörter stimmen nicht überein.";
+        return;
+    } else {
+        passwordError.textContent = "";
+    }
+    
+
 
     if (!termsCheckbox) {
         termsError.textContent = "Bitte akzeptieren Sie die Privacy Policy, um fortzufahren.";
