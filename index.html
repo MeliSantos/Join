@@ -10,7 +10,7 @@
 
 </head>
 
-<body>
+<body onload="init()">
     <header>
         <div class="header_Login">
             <div>
@@ -35,7 +35,7 @@
                     <h1 class="loginTitle">Log in</h1>
                     <div class="blueLine"></div>
                 </div>
-                <form class="loginForm">
+                <form class="loginForm" id="loginForm">
                     <div class="inputGroup">
                         <input type="email" id="email" name="email" placeholder="Email" required>
                         <img src="./assets/img/mail.png" class="inputIcon">
@@ -46,7 +46,7 @@
                     </div>
                     <div class="btnLogIn">
                         <button type="submit" class="btn1 btnContent">Log in</button>
-                        <button type="button" class="btn2 btnContent">Guest Log in</button>
+                        <button type="button" class="btn2 btnContent" id="guestLogIn">Guest Log in</button>
                     </div>
                 </form>
             </div>
@@ -61,6 +61,6 @@
         </div>
     </footer>
 </body>
-<script src="script.js"></script>
+<script src="./login.js"></script>
 
 </html>
