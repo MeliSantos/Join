@@ -1,0 +1,40 @@
+@font-face {
+    font-family: 'Inter';
+    src: url('./assets/fonts/Inter-VariableFont_opsz\,wght.ttf') format('truetype');
+}
+
+body {
+    background-color: #f6f7f8;
+    margin: 0;
+    font-family: 'Inter';
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    display: flex;
+}
+
+.mainSection {
+    display: flex;
+    flex: 1;
+}
+
+.contentRight {
+    flex: 1;
+    margin-top: 100px;
+}
+
+.addTaskHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 100px 0px 50px 100px;
+    max-width: 625px;
+    height: 73px;
+}
+
+h1 {
+    font-size: 60px;
+}
