@@ -38,3 +38,32 @@ main {
 h1 {
     font-size: 60px;
 }
+
+.mainTask {
+    width: 880px;
+    height: 400px;
+    margin-left: 96px;
+    background-color: aquamarine;
+    display: flex;
+    align-items: center;
+    flex-direction: space-between;
+}
+
+.descriptionTask {
+    width: 440px;
+    height: 376px;
+    background-color: white;
+}
+
+.separateLine {
+    width: 1px;
+    height: 424px;
+    background-color: #D1D1D1;
+    margin: 0 20px;
+}
+
+.infoTask {
+    width: 440px;
+    height: 400px;
+    background-color: white;
+}
