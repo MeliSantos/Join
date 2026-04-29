@@ -10,7 +10,7 @@
 
 </head>
 
-<body>
+<body onload="init()">
     <header class="mainHeader">
         <span class="textHeader">Kanban Project Management Tool</span>
         <div class="infoRight">
@@ -46,7 +46,7 @@
                         <div class="separationLine"></div>
                         <img src="./assets/img/search.png" alt="Search Icon" class="inputIcon">
                     </div>
-                    <div><button class="btn1 btnContent">Add Task <img src="./assets/img/add.png"
+                    <div><button class="btn1 btnContent" onclick="createTask()">Add Task <img src="./assets/img/add.png"
                                 alt="Add Icon"></button>
                     </div>
                 </div>
@@ -54,10 +54,10 @@
             </div>
             <div class="taskStatus">
                 <div class="taskdiv">
-                    <div class="taskDivContent"> To do </div> <img src="./assets/img/plus button.png" alt="Add Icon">
+                    <div class="taskDivContent" > To do </div> <img src="./assets/img/plus button.png" alt="Add Icon">
                 </div>
                 <div class="taskdiv">
-                    <div class="taskDivContent"> In progress </div> <img src="./assets/img/plus button.png"
+                    <div class="taskDivContent" > In progress </div> <img src="./assets/img/plus button.png"
                         alt="Add Icon">
                 </div>
                 <div class="taskdiv">
@@ -70,15 +70,19 @@
             </div>
             <div class="taskContentSection">
                 <div class="tasksContent">
-                    <div class="noTask">No tasks to do</div>
+                    <div id="todo"></div>
+                    <div class="noTask" >No tasks to do</div>
                 </div>
                 <div class="tasksContent">
+                    <div id="inProgress"></div>
                     <div class="noTask">No tasks in progress</div>
                 </div>
                 <div class="tasksContent">
+                    <div id="awaitingFeedback"></div>
                     <div class="noTask">No tasks awaiting feedback</div>
                 </div>
                 <div class="tasksContent">
+                    <div id="done"></div>
                     <div class="noTask">No tasks done</div>
                 </div>
             </div>
@@ -86,5 +90,5 @@
 
     </main>
 </body>
-
+<script src="./board.js"></script>
 </html>
