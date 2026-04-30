@@ -61,27 +61,60 @@ function getSubtaskProgress(subtasks) {
     return `${done}/${subtasks.length}`;
 }
 
+function getProgressPercent(subtasks) {
+  if (!subtasks || subtasks.length === 0) return 0;
+
+  let done = subtasks.filter(st => st.completed).length;
+  return (done / subtasks.length) * 100;
+}
+
 function createTaskCard(task) {
-    let card = document.createElement("div");
-    card.classList.add("task-card");
+  let card = document.createElement("div");
+  card.classList.add("task-card");
 
-    let progress = getSubtaskProgress(task.subtasks);
-    let assignedHTML = task.assignedTo.map(name => `<span class="avatar">${getInitials(name)}</span>`).join("");
+  let progress = getSubtaskProgress(task.subtasks);
+  let progressPercent = getProgressPercent(task.subtasks);
 
-    card.innerHTML = `
-    <span class="category">${task.category}</span>
+  let assignedHTML = task.assignedTo
+    .map(name => `<span class="avatar">${getInitials(name)}</span>`)
+    .join("");
+
+  let priorityIcon = getPriorityIcon(task.priority);
+
+  card.innerHTML = `
+    <div class="category ${task.category.toLowerCase()}">
+      ${task.category}
+    </div>
+
     <h3>${task.title}</h3>
-    <p>${task.description}</p>
-    <div class="subtasks">
-      ${progress} Subtasks
+    <p class="description">${task.description}</p>
+
+    <div class="subtask-section">
+      <div class="progress-bar">
+        <div class="progress" style="width: ${progressPercent}%"></div>
+      </div>
+      <span class="progress-text">${progress} Subtasks</span>
     </div>
-    <div class="assigned-to">
-    ${assignedHTML}
+
+    <div class="card-footer">
+      <div class="assigned-to">
+        ${assignedHTML}
+      </div>
+      <div class="priority">
+        <img src="${priorityIcon}" alt="${task.priority}">
+      </div>
     </div>
-    <div class="priority">${task.priority}</div>
   `;
-    card.onclick = () => openTaskDialog(task);
-    return card;
+
+  card.onclick = () => openTaskDialog(task);
+
+  return card;
+}
+
+function getPriorityIcon(priority) {
+  if (priority === "urgent") return "./assets/img/urgent.png";
+  if (priority === "medium") return "./assets/img/medium.png";
+  if (priority === "low") return "./assets/img/low.png";
 }
 
 function openTaskDialog(task) {
@@ -97,21 +130,36 @@ function getInitials(name) {
 }
 
 function createTask() {
-    let title = document.getElementById("title").value;
-    let description = document.getElementById("description").value;
+  let title = document.getElementById("taskTitle").value;
+  let description = document.getElementById("taskDescription").value;
+  let dueDate = document.getElementById("taskDate").value;
+  let priority = document.getElementById("taskPriority").value;
 
-    let newTask = {
-        id: Date.now(),
-        title,
-        description,
-        dueDate: "2023-10-30",
-        status: "todo",
-        priority: "medium",
-        assignedTo: ["Guest"],
-        category: "General",
-        subtasks: []
-    };
+  if (!title) return alert("Title required");
 
-    tasks.push(newTask);
-    renderBoard();
+  let newTask = {
+    id: Date.now(),
+    title,
+    description,
+    dueDate,
+    status: "todo",
+    priority,
+    assignedTo: ["Guest"],
+    category: "General",
+    subtasks: []
+  };
+
+  tasks.push(newTask);
+  renderBoard();
+  closeAddTask();
+}
+
+function openAddTask() {
+  document.getElementById("addTaskPanel").classList.add("open");
+  document.getElementById("addTaskOverlay").classList.add("open");
+}
+
+function closeAddTask() {
+  document.getElementById("addTaskPanel").classList.remove("open");
+  document.getElementById("addTaskOverlay").classList.remove("open");
 }
