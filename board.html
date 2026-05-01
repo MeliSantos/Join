@@ -10,7 +10,7 @@
 
 </head>
 
-<body>
+<body onload="init()">
     <header class="mainHeader">
         <span class="textHeader">Kanban Project Management Tool</span>
         <div class="infoRight">
@@ -46,7 +46,7 @@
                         <div class="separationLine"></div>
                         <img src="./assets/img/search.png" alt="Search Icon" class="inputIcon">
                     </div>
-                    <div><button class="btn1 btnContent">Add Task <img src="./assets/img/add.png"
+                    <div><button class="btn1 btnContent" onclick="openAddTask()">Add Task <img src="./assets/img/add.png"
                                 alt="Add Icon"></button>
                     </div>
                 </div>
@@ -70,21 +70,46 @@
             </div>
             <div class="taskContentSection">
                 <div class="tasksContent">
+                    <div id="todo"></div>
                     <div class="noTask">No tasks to do</div>
                 </div>
                 <div class="tasksContent">
+                    <div id="inProgress"></div>
                     <div class="noTask">No tasks in progress</div>
                 </div>
                 <div class="tasksContent">
+                    <div id="awaitingFeedback"></div>
                     <div class="noTask">No tasks awaiting feedback</div>
                 </div>
                 <div class="tasksContent">
+                    <div id="done"></div>
                     <div class="noTask">No tasks done</div>
                 </div>
             </div>
         </section>
 
     </main>
+
+    <div id="addTaskOverlay" class="overlay" onclick="closeAddTask()"></div>
+
+    <div id="addTaskPanel" class="add-task-panel">
+        <h2>Add Task</h2>
+
+        <input id="taskTitle" placeholder="Title">
+
+        <textarea id="taskDescription" placeholder="Description"></textarea>
+
+        <input type="date" id="taskDate">
+
+        <select id="taskPriority">
+            <option value="low">Low</option>
+            <option value="medium">Medium</option>
+            <option value="urgent">Urgent</option>
+        </select>
+
+        <button onclick="createTask()">Create Task</button>
+    </div>
 </body>
+<script src="./board.js"></script>
 
 </html>
