@@ -54,10 +54,10 @@
             </div>
             <div class="taskStatus">
                 <div class="taskdiv">
-                    <div class="taskDivContent"> To do </div> <img src="./assets/img/plus button.png" alt="Add Icon">
+                    <div class="taskDivContent" > To do </div> <img src="./assets/img/plus button.png" alt="Add Icon">
                 </div>
                 <div class="taskdiv">
-                    <div class="taskDivContent"> In progress </div> <img src="./assets/img/plus button.png"
+                    <div class="taskDivContent" > In progress </div> <img src="./assets/img/plus button.png"
                         alt="Add Icon">
                 </div>
                 <div class="taskdiv">
@@ -69,19 +69,19 @@
                 </div>
             </div>
             <div class="taskContentSection">
-                <div class="tasksContent">
+                <div class="tasksContent" ondrop="moveTo('todo')" ondragover="dragoverHandler(event)">
                     <div id="todo"></div>
-                    <div class="noTask">No tasks to do</div>
+                    <div class="noTask" >No tasks to do</div>
                 </div>
-                <div class="tasksContent">
+                <div class="tasksContent" ondrop="moveTo('inProgress')" ondragover="dragoverHandler(event)">
                     <div id="inProgress"></div>
                     <div class="noTask">No tasks in progress</div>
                 </div>
-                <div class="tasksContent">
+                <div class="tasksContent" ondrop="moveTo('awaitingFeedback')" ondragover="dragoverHandler(event)">
                     <div id="awaitingFeedback"></div>
                     <div class="noTask">No tasks awaiting feedback</div>
                 </div>
-                <div class="tasksContent">
+                <div class="tasksContent" ondrop="moveTo('done')" ondragover="dragoverHandler(event)">
                     <div id="done"></div>
                     <div class="noTask">No tasks done</div>
                 </div>

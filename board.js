@@ -1,30 +1,32 @@
 let tasks = [
     {
-        id: 2,
+        id: 0,
         title: "CSS Architecture Planning",
         description: "Define SCSS naming conventions",
         dueDate: "2023-10-23",
         status: "inProgress",
         priority: "urgent",
         assignedTo: ["Sofia Müller"],
-        category: "Design",
+        category: "Technical Task",
         subtasks: [
             { id: 1, title: "Research BEM vs SMACSS", completed: false },
             { id: 2, title: "Draft naming guidelines", completed: false }
         ]
     },
     {
-        id: 3,
+        id: 1,
         title: "Test Task 2",
         description: "Noch eine Aufgabe",
         dueDate: "2023-10-25",
         status: "todo",
         priority: "low",
-        assignedTo: ["Max Mustermann"],
-        category: "Development",
+        assignedTo: ["Max Mustermann","Sofia Müller"],
+        category: "User Story",
         subtasks: []
     }
 ];
+
+let currentDraggedTaskId;
 
 function init() {
     renderBoard();
@@ -54,7 +56,7 @@ function renderBoard() {
     });
 }
 
-function getSubtaskProgress(subtasks) {
+function getSubtaskProgress(subtasks) { // muss ggf verändert werden, wenn ich die Subtasks in der Task-Dialogbox bearbeitbar machen möchte
     if (!subtasks || subtasks.length === 0) return "0/0";
 
     let done = subtasks.filter(st => st.completed).length;
@@ -67,6 +69,20 @@ function getProgressPercent(subtasks) {
   let done = subtasks.filter(st => st.completed).length;
   return (done / subtasks.length) * 100;
 }
+
+function startDragging(id) {
+    currentDraggedTaskId = id;
+}
+
+function dragoverHandler(ev) {
+  ev.preventDefault();
+}
+
+function moveTo(status) {
+   tasks[currentDraggedTaskId]['status'] = status;
+   renderBoard();
+}
+
 
 function createTaskCard(task) {
   let card = document.createElement("div");
@@ -82,7 +98,8 @@ function createTaskCard(task) {
   let priorityIcon = getPriorityIcon(task.priority);
 
   card.innerHTML = `
-    <div class="category ${task.category.toLowerCase()}">
+  <div draggable="true" ondragstart="startDragging(${task['id']})">
+    <div class="category ${task.category.replace(' ', '')}">
       ${task.category}
     </div>
 
@@ -103,7 +120,8 @@ function createTaskCard(task) {
       <div class="priority">
         <img src="${priorityIcon}" alt="${task.priority}">
       </div>
-    </div>
+     </div>
+   </div>
   `;
 
   card.onclick = () => openTaskDialog(task);
@@ -129,7 +147,7 @@ function getInitials(name) {
         .toUpperCase();
 }
 
-function createTask() {
+function createTask() { // muss ich noch bearbeiten, damit die richtigen Daten auch wirklich in das Objekt kommen
   let title = document.getElementById("taskTitle").value;
   let description = document.getElementById("taskDescription").value;
   let dueDate = document.getElementById("taskDate").value;

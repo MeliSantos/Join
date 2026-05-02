@@ -1,165 +1,165 @@
 input {
-    width: 312px;
-    height: 48px;
-    padding: 10px 13px 10px 13px;
-    margin: 12px;
-    border: 1px solid #d1d1d1b3;
-    border-radius: 8px;
-    font-size: 18px
+  width: 312px;
+  height: 48px;
+  padding: 10px 13px 10px 13px;
+  margin: 12px;
+  border: 1px solid #d1d1d1b3;
+  border-radius: 8px;
+  font-size: 18px
 }
 
 .btn1 {
-    font-weight: bold;
-    color: #ffffff;
-    background-color: #2A3647;
-    border-radius: 8px;
-    padding: 12px 12px;
-    border: none;
+  font-weight: bold;
+  color: #ffffff;
+  background-color: #2A3647;
+  border-radius: 8px;
+  padding: 12px 12px;
+  border: none;
 }
 
 .btn1:hover {
-    background-color: #29ABE2;
-    cursor: pointer;
-    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.3);
+  background-color: #29ABE2;
+  cursor: pointer;
+  box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.3);
 }
 
 .btnContent {
-    font-size: 21px;
-    font-weight: 700;
-    width: 160px;
-    height: 48px;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
+  font-size: 21px;
+  font-weight: 700;
+  width: 160px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
 
 }
 
 .contentRight {
-    flex: 1;
-    margin-top: 100px;
+  flex: 1;
+  margin-top: 100px;
 }
 
 main {
-    display: flex;
+  display: flex;
 }
 
 .mainSection {
-    width: 1208px;
-    height: 232px;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    justify-content: space-between;
-    padding-left: 64px;
+  width: 1208px;
+  height: 232px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-left: 64px;
 }
 
 .boardHeader {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 1056px;
-    height: 73px;
-    margin-top: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 1056px;
+  height: 73px;
+  margin-top: 100px;
 }
 
 .boardHeaderLeft {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 504px;
-    height: 48px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 504px;
+  height: 48px;
 }
 
 h1 {
-    font-size: 61px;
+  font-size: 61px;
 }
 
 .separationLine {
-    width: 1px;
-    border-radius: 1px;
-    height: 31px;
-    background-color: #D1D1D1;
-    margin-right: 20px;
+  width: 1px;
+  border-radius: 1px;
+  height: 31px;
+  background-color: #D1D1D1;
+  margin-right: 20px;
 }
 
 .inputSearch {
-    display: flex;
-    align-items: center;
-    border: 1px solid #d1d1d1b3;
-    border-radius: 8px;
-    padding: 0 10px;
-    height: 48px;
-    width: 312px;
-    background-color: white;
+  display: flex;
+  align-items: center;
+  border: 1px solid #d1d1d1b3;
+  border-radius: 8px;
+  padding: 0 10px;
+  height: 48px;
+  width: 312px;
+  background-color: white;
 }
 
 .inputSearch input {
-    border: none;
-    outline: none;
-    flex: 1;
-    font-size: 18px;
-    margin: 0;
+  border: none;
+  outline: none;
+  flex: 1;
+  font-size: 18px;
+  margin: 0;
 }
 
 .inputIcon {
-    width: 20px;
-    height: 20px;
-    cursor: pointer;
-    margin-right: 10px;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  margin-right: 10px;
 }
 
 .taskStatus {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 1208px;
-    height: 24px;
-    margin-top: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 1208px;
+  height: 24px;
+  margin-top: 100px;
 }
 
 .taskdiv {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 244px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 244px;
 }
 
 .taskDivContent {
-    color: #42526E;
-    font-weight: bold;
-    font-size: 20px;
+  color: #42526E;
+  font-weight: bold;
+  font-size: 20px;
 }
 
 ::placeholder {
-    color: #D1D1D1;
+  color: #D1D1D1;
 }
 
 .taskContentSection {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 1208px;
-    height: 688px;
-    margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 1208px;
+  height: 688px;
+  margin-top: 20px;
 }
 
 .tasksContent {
-    height: 688px;
-    width: 246px;
+  height: 688px;
+  width: 246px;
 }
 
 .noTask {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 246px;
-    height: 48px;
-    background-color: #E7E7E7;
-    border-radius: 8px;
-    color: #A8A8A8;
-    font-size: 16px;
-    border: 1px dashed #A8A8A8;
-    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.16);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 246px;
+  height: 48px;
+  background-color: #E7E7E7;
+  border-radius: 8px;
+  color: #A8A8A8;
+  font-size: 16px;
+  border: 1px dashed #A8A8A8;
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.16);
 }
 
 .overlay {
@@ -168,14 +168,15 @@ h1 {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0,0,0,0.3);
+  background: rgba(0, 0, 0, 0.3);
   display: none;
 }
 
 .add-task-panel {
   position: fixed;
   top: 0;
-  right: -400px; /* versteckt */
+  right: -400px;
+  /* versteckt */
   width: 400px;
   height: 100%;
   background: white;
@@ -197,7 +198,7 @@ h1 {
   border-radius: 24px;
   padding: 16px;
   margin-bottom: 16px;
-  box-shadow: 0px 2px 10px rgba(0,0,0,0.08);
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.08);
   cursor: pointer;
   display: flex;
   flex-direction: column;
@@ -206,24 +207,24 @@ h1 {
 
 .category {
   color: white;
-  padding: 4px 12px;
+  padding: 4px 16px;
   border-radius: 8px;
-  font-size: 12px;
+  font-size: 16px;
   width: fit-content;
 }
 
-.category.design {
-  background: #ff7a00;
+.category.TechnicalTask {
+  background: #1FD7C1;
 }
 
-.category.development {
+.category.UserStory {
   background: #0038ff;
 }
 
 .description {
   color: #a8a8a8;
   font-size: 14px;
-  
+
 }
 
 .subtask-section {
@@ -249,6 +250,7 @@ h1 {
   font-size: 12px;
   white-space: nowrap;
 }
+
 .card-footer {
   display: flex;
   justify-content: space-between;
@@ -268,7 +270,7 @@ h1 {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 12px;
+  font-size: 16px;
   margin-right: -8px;
   border: 2px solid white;
 }
