@@ -47,15 +47,53 @@
             </div>
             <section class="mainTask">
                 <div class="descriptionTask">
-                    <label for="title">Title:</label>
-                    <input type="text" id="title" name="title" placeholder="Enter a title">
-                    <label for="des">Description:</label>
-                    <input type="text" id="des" name="des" placeholder="Enter a description">
-                    <label for="date">Date:</label>
-                    <input type="date" id="date" name="date" placeholder="dd/mm/yyyy">
+                    <div class="title">
+                        <label for="title">Title*</label>
+                        <input type="text" id="title" name="title" placeholder="Enter a title">
+                    </div>
+                    <div class="description">
+                        <label for="des">Description</label>
+                        <input type="text" id="des" name="des" placeholder="Enter a description">
+                    </div>
+                    <div class="date">
+                        <label for="date">Date*</label>
+                        <input type="date" id="date" name="date" placeholder="dd/mm/yyyy">
+                    </div>
                 </div>
                 <div class="separateLine"></div>
-                <div class="infoTask"></div>
+                <div class="infoTask">
+                    <section class="priority">
+                        <p class="priorityP">Priority</p>
+                        <div class="priorityOptions">
+                            <button class="priorityButton low">Urgent
+                                <img src="./assets/img/urgent.png" alt="Urgent">
+                            </button>
+                            <button class="priorityButton medium">Medium
+                                <img src="./assets/img/medium.png" alt="Medium">
+                            </button>
+                            <button class="priorityButton high">Low
+                                <img src="./assets/img/low.png" alt="Low">
+                            </button>
+                        </div>
+                    </section>
+                    <section class="assignedTo">
+                        <p class="assignedToP">Assigned to</p>
+                        <select name="assignedTo" id="assignedTo">
+                            <option value="">Select contacts to assign</option>
+                        </select>
+                    </section>
+                    <section class="assignedTo">
+                        <p class="assignedToP">Category*</p>
+                        <select name="category" id="category">
+                            <option value="">Select a category</option>
+                        </select>
+                    </section>
+                    <section class="assignedTo">
+                        <p class="assignedToP">Subtasks</p>
+                        <input type="text" id="subtask" name="subtask" placeholder="Enter a title">
+                        </select>
+                    </section>
+                </div>
 
             </section>
         </section>

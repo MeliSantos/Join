@@ -43,36 +43,155 @@ h1 {
     width: 880px;
     height: 400px;
     margin-left: 96px;
-    background-color: aquamarine;
     display: flex;
     align-items: center;
-    flex-direction: space-between;
+    justify-content: space-between;
 }
 
 .descriptionTask {
     width: 440px;
     height: 376px;
-    background-color: white;
     display: flex;
     flex-direction: column;
 }
 
 .separateLine {
-    width: 1px;
+    width: 0px;
     height: 424px;
-    background-color: #D1D1D1;
-    margin: 0 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+    border: 1px solid #D1D1D1;
 }
 
 .infoTask {
     width: 440px;
     height: 400px;
-    background-color: white;
 }
 
 input {
     width: 440px;
     border: 1px solid #d1d1d1b3;
-    border-radius: 8px;
-    font-size: 18px
+    border-radius: 10px;
+    font-size: 20px;
+    font-weight: 400;
+    color: #D1D1D1;
+}
+
+input::placeholder {
+    padding-left: 21px;
+}
+
+#date::placeholder {
+    padding-left: 14px;
+}
+
+label {
+    height: 24px;
+    font-size: 20px;
+    font-weight: 400;
+    color: #2A3647;
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+
+.title {
+    width: 440px;
+    height: 96px;
+}
+
+#title {
+    height: 48px;
+}
+
+.description {
+    width: 440px;
+    height: 168px;
+}
+
+#des {
+    height: 120px;
+}
+
+.date {
+    width: 440px;
+    height: 96px;
+}
+
+#date {
+    height: 48px;
+}
+
+.priority {
+    width: 440px;
+    height: 88px;
+    margin-bottom: 24px;
+}
+
+.priorityP {
+    height: 24px;
+    width: 68px;
+    font-size: 20px;
+    font-weight: 400;
+    margin: 0;
+}
+
+.priorityOptions {
+    margin-top: 16px;
+    width: 440px;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+button {
+    width: 136px;
+    height: 56px;
+    border: none;
+    border-radius: 10px;
+    font-size: 20px;
+    font-weight: 400;
+    box-shadow: 0px 0px 4px 0px #0000001A;
+    background-color: #FFFFFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+button:hover {
+    background-color: #FFA800;
+    cursor: pointer;
+}
+
+.assignedTo {
+    width: 440px;
+    height: 80px;
+    margin-bottom: 24px;
+}
+
+.assignedToP {
+    width: 112px;
+    height: 24px;
+    font-size: 20px;
+    font-weight: 400;
+    margin: 0;
+    color: #2A3647;
+}
+
+select {
+    width: 440px;
+    height: 48px;
+    border: 1px solid #d1d1d1b3;
+    border-radius: 10px;
+    font-size: 20px;
+    font-weight: 400;
+    color: #000000;
+    margin-top: 12px;
+    padding-left: 16px;
+    padding-right: 16px;
+}
+
+#subtask {
+    height: 48px;
 }
