@@ -1,66 +1,67 @@
 let tasks = [
-    {
-        id: 0,
-        title: "CSS Architecture Planning",
-        description: "Define SCSS naming conventions",
-        dueDate: "2023-10-23",
-        status: "inProgress",
-        priority: "urgent",
-        assignedTo: ["Sofia Müller"],
-        category: "Technical Task",
-        subtasks: [
-            { id: 1, title: "Research BEM vs SMACSS", completed: false },
-            { id: 2, title: "Draft naming guidelines", completed: false }
-        ]
-    },
-    {
-        id: 1,
-        title: "Test Task 2",
-        description: "Noch eine Aufgabe",
-        dueDate: "2023-10-25",
-        status: "todo",
-        priority: "low",
-        assignedTo: ["Max Mustermann","Sofia Müller"],
-        category: "User Story",
-        subtasks: []
-    }
+  {
+    id: 0,
+    title: "CSS Architecture Planning",
+    description: "Define SCSS naming conventions",
+    dueDate: "2023-10-23",
+    status: "inProgress",
+    priority: "urgent",
+    assignedTo: ["Sofia Müller"],
+    category: "Technical Task",
+    subtasks: [
+      { id: 1, title: "Research BEM vs SMACSS", completed: false },
+      { id: 2, title: "Draft naming guidelines", completed: false }
+    ]
+  },
+  {
+    id: 1,
+    title: "Test Task 2",
+    description: "Noch eine Aufgabe",
+    dueDate: "2023-10-25",
+    status: "todo",
+    priority: "low",
+    assignedTo: ["Max Mustermann", "Sofia Müller"],
+    category: "User Story",
+    subtasks: []
+  }
 ];
 
 let currentDraggedTaskId;
 
 function init() {
-    renderBoard();
+  renderBoard();
 }
 
 function renderBoard() {
-    document.getElementById("todo").innerHTML = "";
-    document.getElementById("inProgress").innerHTML = "";
-    document.getElementById("awaitingFeedback").innerHTML = "";
-    document.getElementById("done").innerHTML = "";
+  document.getElementById("todo").innerHTML = "";
+  document.getElementById("inProgress").innerHTML = "";
+  document.getElementById("awaitingFeedback").innerHTML = "";
+  document.getElementById("done").innerHTML = "";
 
-    tasks.forEach(task => {
-        let card = createTaskCard(task);
+  tasks.forEach(task => {
+    let card = createTaskCard(task);
 
-        if (task.status === "todo") {
-            document.getElementById("todo").appendChild(card);
-        }
-        else if (task.status === "inProgress") {
-            document.getElementById("inProgress").appendChild(card);
-        }
-        else if (task.status === "awaitingFeedback") {
-            document.getElementById("awaitingFeedback").appendChild(card);
-        }
-        else if (task.status === "done") {
-            document.getElementById("done").appendChild(card);
-        }
-    });
+    if (task.status === "todo") {
+      document.getElementById("todo").appendChild(card);
+    }
+    else if (task.status === "inProgress") {
+      document.getElementById("inProgress").appendChild(card);
+    }
+    else if (task.status === "awaitingFeedback") {
+      document.getElementById("awaitingFeedback").appendChild(card);
+    }
+    else if (task.status === "done") {
+      document.getElementById("done").appendChild(card);
+    }
+  });
+  updateNoTaskMessages();
 }
 
 function getSubtaskProgress(subtasks) { // muss ggf verändert werden, wenn ich die Subtasks in der Task-Dialogbox bearbeitbar machen möchte
-    if (!subtasks || subtasks.length === 0) return "0/0";
+  if (!subtasks || subtasks.length === 0) return "0/0";
 
-    let done = subtasks.filter(st => st.completed).length;
-    return `${done}/${subtasks.length}`;
+  let done = subtasks.filter(st => st.completed).length;
+  return `${done}/${subtasks.length}`;
 }
 
 function getProgressPercent(subtasks) {
@@ -71,7 +72,7 @@ function getProgressPercent(subtasks) {
 }
 
 function startDragging(id) {
-    currentDraggedTaskId = id;
+  currentDraggedTaskId = id;
 }
 
 function dragoverHandler(ev) {
@@ -79,8 +80,8 @@ function dragoverHandler(ev) {
 }
 
 function moveTo(status) {
-   tasks[currentDraggedTaskId]['status'] = status;
-   renderBoard();
+  tasks[currentDraggedTaskId]['status'] = status;
+  renderBoard();
 }
 
 
@@ -136,15 +137,66 @@ function getPriorityIcon(priority) {
 }
 
 function openTaskDialog(task) {
-    alert(task.title); // erstmal zum testen
+  let dialog = document.getElementById("taskDialog");
+
+  let priorityIcon = getPriorityIcon(task.priority);
+
+  let assignedHTML = task.assignedTo
+    .map(name => `
+      <div class="assigned-user">
+        <span class="avatar">${getInitials(name)}</span>
+        ${name}
+      </div>
+    `).join("");
+
+  let subtasksHTML = task.subtasks.map(st => `
+    <div>
+      <input type="checkbox" ${st.completed ? "checked" : ""}>
+      ${st.title}
+    </div>
+  `).join("");
+
+  dialog.innerHTML = `
+    <div class="category ${task.category.replace(' ', '')}">
+      ${task.category}
+    </div>
+
+    <h2>${task.title}</h2>
+
+    <p class="subtitleDialogue">${task.description}</p>
+
+    <p class="descriptionDialogue">Due date: ${task.dueDate}</p>
+
+    <p class="descriptionDialogue">Priority:
+      <img src="${priorityIcon}" style="width:16px; vertical-align:middle;">
+    </p>
+
+    <div class="assigned-to descriptionDialogue">
+      <p>Assigned To:</p>
+      ${assignedHTML}
+    </div>
+
+    <div class="subtasks descriptionDialogue">
+      <p>Subtasks:</p>
+      ${subtasksHTML || "No subtasks"}
+    </div>
+  `;
+
+  document.getElementById("taskDialogOverlay").classList.add("open");
+  dialog.classList.add("open");
+}
+
+function closeTaskDialog() {
+  document.getElementById("taskDialog").classList.remove("open");
+  document.getElementById("taskDialogOverlay").classList.remove("open");
 }
 
 function getInitials(name) {
-    return name
-        .split(" ")
-        .map(n => n[0])
-        .join("")
-        .toUpperCase();
+  return name
+    .split(" ")
+    .map(n => n[0])
+    .join("")
+    .toUpperCase();
 }
 
 function createTask() { // muss ich noch bearbeiten, damit die richtigen Daten auch wirklich in das Objekt kommen
@@ -180,4 +232,22 @@ function openAddTask() {
 function closeAddTask() {
   document.getElementById("addTaskPanel").classList.remove("open");
   document.getElementById("addTaskOverlay").classList.remove("open");
+}
+
+function updateNoTaskMessages() {
+  toggleNoTask("todo", "noTaskTodo");
+  toggleNoTask("inProgress", "noTaskInProgress");
+  toggleNoTask("awaitingFeedback", "noTaskAwaitingFeedback");
+  toggleNoTask("done", "noTaskDone");
+}
+
+function toggleNoTask(columnId, messageId) {
+  let column = document.getElementById(columnId);
+  let message = document.getElementById(messageId);
+
+  if (column.children.length === 0) {
+    message.style.display = "flex";
+  } else {
+    message.style.display = "none";
+  }
 }
