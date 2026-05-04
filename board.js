@@ -54,6 +54,7 @@ function renderBoard() {
             document.getElementById("done").appendChild(card);
         }
     });
+    updateNoTaskMessages();
 }
 
 function getSubtaskProgress(subtasks) { // muss ggf verändert werden, wenn ich die Subtasks in der Task-Dialogbox bearbeitbar machen möchte
@@ -180,4 +181,22 @@ function openAddTask() {
 function closeAddTask() {
   document.getElementById("addTaskPanel").classList.remove("open");
   document.getElementById("addTaskOverlay").classList.remove("open");
+}
+
+function updateNoTaskMessages() {
+  toggleNoTask("todo", "noTaskTodo");
+  toggleNoTask("inProgress", "noTaskInProgress");
+  toggleNoTask("awaitingFeedback", "noTaskAwaitingFeedback");
+  toggleNoTask("done", "noTaskDone");
+}
+
+function toggleNoTask(columnId, messageId) {
+  let column = document.getElementById(columnId);
+  let message = document.getElementById(messageId);
+
+  if (column.children.length === 0) {
+    message.style.display = "flex";
+  } else {
+    message.style.display = "none";
+  }
 }

@@ -35,22 +35,21 @@ input {
 }
 
 .contentRight {
-  flex: 1;
   margin-top: 100px;
 }
 
 main {
   display: flex;
+  min-height: 100vh;
 }
 
 .mainSection {
   width: 1208px;
   height: 232px;
   display: flex;
-  align-items: center;
   flex-direction: column;
   justify-content: space-between;
-  padding-left: 64px;
+  align-items: center;
 }
 
 .boardHeader {
@@ -59,7 +58,7 @@ main {
   align-items: center;
   width: 1056px;
   height: 73px;
-  margin-top: 100px;
+  margin-top: 80px;
 }
 
 .boardHeaderLeft {
@@ -111,10 +110,11 @@ h1 {
 .taskStatus {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   width: 1208px;
   height: 24px;
-  margin-top: 100px;
+  margin-top: 64px;
+  gap: 26px;
 }
 
 .taskdiv {
@@ -136,11 +136,12 @@ h1 {
 
 .taskContentSection {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   width: 1208px;
   height: 688px;
   margin-top: 20px;
+  gap: 26px;
 }
 
 .tasksContent {

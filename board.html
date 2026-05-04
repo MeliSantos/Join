@@ -20,18 +20,20 @@
     </header>
     <main>
         <nav class="navLeftSide">
-            <div class="logo"></div>
-            <div class="navButtonContainer">
-                <a class="navButton" href="#">Summary</a>
-                <a class="navButton" href="#">Add Task</a>
-                <a class="navButton" href="#">Board</a>
-                <a class="navButton" href="#">Contacts</a>
-            </div>
+            <div class="navContent">
+                <div class="logo"></div>
+                <div class="navButtonContainer">
+                    <a class="navButton" href="#">Summary</a>
+                    <a class="navButton" href="#">Add Task</a>
+                    <a class="navButton" href="#">Board</a>
+                    <a class="navButton" href="#">Contacts</a>
+                </div>
 
-            <div class="navFooter">
-                <div class="footerContent">
-                    <a href="#">Privacy Policy</a>
-                    <a href="#">Legal notice</a>
+                <div class="navFooter">
+                    <div class="footerContent">
+                        <a href="#">Privacy Policy</a>
+                        <a href="#">Legal notice</a>
+                    </div>
                 </div>
             </div>
         </nav>
@@ -46,18 +48,18 @@
                         <div class="separationLine"></div>
                         <img src="./assets/img/search.png" alt="Search Icon" class="inputIcon">
                     </div>
-                    <div><button class="btn1 btnContent" onclick="openAddTask()">Add Task <img src="./assets/img/add.png"
-                                alt="Add Icon"></button>
+                    <div><button class="btn1 btnContent" onclick="openAddTask()">Add Task <img
+                                src="./assets/img/add.png" alt="Add Icon"></button>
                     </div>
                 </div>
 
             </div>
             <div class="taskStatus">
                 <div class="taskdiv">
-                    <div class="taskDivContent" > To do </div> <img src="./assets/img/plus button.png" alt="Add Icon">
+                    <div class="taskDivContent"> To do </div> <img src="./assets/img/plus button.png" alt="Add Icon">
                 </div>
                 <div class="taskdiv">
-                    <div class="taskDivContent" > In progress </div> <img src="./assets/img/plus button.png"
+                    <div class="taskDivContent"> In progress </div> <img src="./assets/img/plus button.png"
                         alt="Add Icon">
                 </div>
                 <div class="taskdiv">
@@ -71,19 +73,19 @@
             <div class="taskContentSection">
                 <div class="tasksContent" ondrop="moveTo('todo')" ondragover="dragoverHandler(event)">
                     <div id="todo"></div>
-                    <div class="noTask" >No tasks to do</div>
+                    <div class="noTask" id="noTaskTodo">No tasks to do</div>
                 </div>
                 <div class="tasksContent" ondrop="moveTo('inProgress')" ondragover="dragoverHandler(event)">
                     <div id="inProgress"></div>
-                    <div class="noTask">No tasks in progress</div>
+                    <div class="noTask" id="noTaskInProgress">No tasks in progress</div>
                 </div>
                 <div class="tasksContent" ondrop="moveTo('awaitingFeedback')" ondragover="dragoverHandler(event)">
                     <div id="awaitingFeedback"></div>
-                    <div class="noTask">No tasks awaiting feedback</div>
+                    <div class="noTask" id="noTaskAwaitingFeedback">No tasks awaiting feedback</div>
                 </div>
                 <div class="tasksContent" ondrop="moveTo('done')" ondragover="dragoverHandler(event)">
                     <div id="done"></div>
-                    <div class="noTask">No tasks done</div>
+                    <div class="noTask" id="noTaskDone">No tasks done</div>
                 </div>
             </div>
         </section>
