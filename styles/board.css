@@ -279,3 +279,62 @@ h1 {
 .priority img {
   width: 20px;
 }
+
+.task-dialog {
+  position: fixed;
+  top: 50%;
+  right: -600px;
+  /* startet außerhalb */
+  transform: translateY(-50%);
+  width: 420px;
+  max-height: 90vh;
+  background: white;
+  border-radius: 24px;
+  padding: 24px;
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.2);
+  transition: right 0.4s ease;
+  z-index: 20;
+  overflow-y: auto;
+}
+
+.task-dialog.open {
+  right: 50%;
+  transform: translate(50%, -50%);
+}
+
+.task-dialog h2 {
+  margin-top: 16px;
+  font-size: 61px;
+  margin-bottom: 0;
+}
+
+.task-dialog .category {
+  margin-bottom: 10px;
+}
+
+.task-dialog .assigned-to {
+  margin-top: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.task-dialog .subtasks {
+  margin-top: 16px;
+}
+
+.task-dialog .subtasks div {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.subtitleDialogue {
+  color: black;
+  font-size: 20px;
+}
+.descriptionDialogue {
+  color: #2A3647;
+  font-size: 20px;
+  font-weight: 400;
+}
