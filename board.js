@@ -151,8 +151,8 @@ function openTaskDialog(task) {
 
   let subtasksHTML = task.subtasks.map(st => `
     <div>
-      <input type="checkbox" ${st.completed ? "checked" : ""}>
-      ${st.title}
+      <input class="subtaskCheckbox" type="checkbox" ${st.completed ? "checked" : ""}>
+      <span>${st.title}</span>
     </div>
   `).join("");
 

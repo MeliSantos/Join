@@ -333,8 +333,79 @@ h1 {
   color: black;
   font-size: 20px;
 }
+
 .descriptionDialogue {
   color: #2A3647;
   font-size: 20px;
   font-weight: 400;
+}
+
+span {
+  font-size: 16px;
+}
+
+/* Container = wird komplett grau beim Hover */
+.subtaskItem {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 6px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* 🔥 Hover auf gesamten Bereich */
+.subtaskItem:hover {
+  background-color: #A8A8A8;
+}
+
+/* Checkbox Basis */
+.subtaskCheckbox {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 16px;
+  height: 16px;
+  border: 2px solid #2A3647;
+  border-radius: 3px;
+  position: relative;
+  cursor: pointer;
+  background-color: white;
+  flex-shrink: 0;
+  padding: 0;
+}
+
+/* Checked */
+.subtaskCheckbox:checked {
+  background-color: white;
+  background-image: url("./img/check.png");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/* 🔥 "Border Cut" (überdeckt den Rand an der Stelle) */
+.subtaskCheckbox:checked::before {
+  content: "";
+  position: absolute;
+  width: 5px;
+  height: 8px;
+  background: white;
+  left: 11px;
+  top: -2px;
+  z-index: 1;
+}
+
+/* ✔ Dünner Haken, weiter rechts */
+.subtaskCheckbox:checked::after {
+  content: "";
+  position: absolute;
+  left: 6px;
+  /* weiter nach rechts */
+  top: -2px;
+  width: 6px;
+  height: 12px;
+  border: solid #2A3647;
+  border-width: 0 2px 2px 0;
+  /* dünner */
+  transform: rotate(45deg);
+  z-index: 2;
 }
