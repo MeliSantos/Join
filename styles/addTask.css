@@ -197,3 +197,59 @@ select {
 #subtask {
     height: 48px;
 }
+
+.buttonLine {
+    display: flex;
+    width: 309px;
+    height: 56px;
+    position: absolute;
+    top: 800px;
+    left: 995px;
+    gap: 16px;
+}
+
+.btn1 {
+    width: 183px;
+    font-weight: bold;
+    color: #ffffff;
+    background-color: #2A3647;
+    border-radius: 8px;
+    padding: 12px 12px;
+    border: none;
+}
+
+.btn1:hover {
+    background-color: #29ABE2;
+    cursor: pointer;
+    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.3);
+}
+
+.btn2 {
+    width: 110px;
+    font-weight: bolder;
+    color: #2A3647;
+    background-color: transparent;
+    border-radius: 8px;
+    padding: 12px 12px;
+    border: 2px solid #2A3647;
+}
+
+.btn2:hover {
+    background-color: transparent;
+    border: 2px solid #29ABE2;
+    color: #29ABE2;
+    cursor: pointer;
+    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.3);
+}
+
+.deletIcon {
+    width: 24px;
+    height: 24px;
+}
+
+.checkIcon {
+    width: 24px;
+    height: 24px;
+    filter: brightness(0) invert(1);
+    overflow: hidden;
+}
