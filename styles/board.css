@@ -344,68 +344,42 @@ span {
   font-size: 16px;
 }
 
-/* Container = wird komplett grau beim Hover */
 .subtaskItem {
   display: flex;
   align-items: center;
   gap: 8px;
+
   padding: 4px 6px;
   border-radius: 6px;
   cursor: pointer;
 }
 
-/* 🔥 Hover auf gesamten Bereich */
 .subtaskItem:hover {
   background-color: #A8A8A8;
 }
 
-/* Checkbox Basis */
+.subtaskItem:hover {
+  background-color: #A8A8A8;
+}
+
 .subtaskCheckbox {
   appearance: none;
   -webkit-appearance: none;
   width: 16px;
-  height: 16px;
-  border: 2px solid #2A3647;
-  border-radius: 3px;
-  position: relative;
-  cursor: pointer;
-  background-color: white;
-  flex-shrink: 0;
-  padding: 0;
-}
-
-/* Checked */
-.subtaskCheckbox:checked {
-  background-color: white;
-  background-image: url("./img/check.png");
+  height: 12px;
+  background-image: url("../assets/img/checkbox-unchecked.svg");
   background-repeat: no-repeat;
   background-position: center;
+  background-size: contain;
+  cursor: pointer;
+  border: 0;
+  margin: 0;
+  padding: 0;
+  border-radius: 3px;
 }
 
-/* 🔥 "Border Cut" (überdeckt den Rand an der Stelle) */
-.subtaskCheckbox:checked::before {
-  content: "";
-  position: absolute;
-  width: 5px;
-  height: 8px;
-  background: white;
-  left: 11px;
-  top: -2px;
-  z-index: 1;
-}
-
-/* ✔ Dünner Haken, weiter rechts */
-.subtaskCheckbox:checked::after {
-  content: "";
-  position: absolute;
-  left: 6px;
-  /* weiter nach rechts */
-  top: -2px;
-  width: 6px;
-  height: 12px;
-  border: solid #2A3647;
-  border-width: 0 2px 2px 0;
-  /* dünner */
-  transform: rotate(45deg);
-  z-index: 2;
+.subtaskCheckbox:checked {
+  background-image: url("../assets/img/checkbox-checked-transp.svg");
+  width: 16px;
+  height: 16px;
 }
