@@ -136,6 +136,12 @@ function getPriorityIcon(priority) {
   if (priority === "low") return "./assets/img/low.png";
 }
 
+function priorityWord(priority) {
+  if (priority === "urgent") return "Urgent";
+  if (priority === "medium") return "Medium";
+  if (priority === "low") return "Low";
+}
+
 function openTaskDialog(task) {
   let dialog = document.getElementById("taskDialog");
 
@@ -157,29 +163,50 @@ function openTaskDialog(task) {
   `).join("");
 
   dialog.innerHTML = `
-    <div class="category ${task.category.replace(' ', '')}">
-      ${task.category}
+  <div class="taskDialogContent"> 
+    <div class="dialogHeader">
+      <div class="category catFontSize ${task.category.replace(' ', '')}">
+       ${task.category}
+      </div> 
+      <button class="close-btn" onclick="closeTaskDialog()"> <img src="../assets/img/close.svg" alt="Close"> </button>
+    </div> 
+
+    <div>
+    <h2>${task.title}</h2>
     </div>
 
-    <h2>${task.title}</h2>
-
+    <div>
     <p class="subtitleDialogue">${task.description}</p>
+    </div>
 
-    <p class="descriptionDialogue">Due date: ${task.dueDate}</p>
+    <div>
+    <p class="descriptionDialogue">Due date: <span class="date">${task.dueDate}</span></p>
+    </div>
 
-    <p class="descriptionDialogue">Priority:
+    <div>
+    <p class="descriptionDialogue">Priority: <span class="priority">${priorityWord(task.priority)}</span>
       <img src="${priorityIcon}" style="width:16px; vertical-align:middle;">
     </p>
+    </div>
+
 
     <div class="assigned-to descriptionDialogue">
-      <p>Assigned To:</p>
+      <p class="margin">Assigned To:</p>
       ${assignedHTML}
     </div>
 
     <div class="subtasks descriptionDialogue">
-      <p>Subtasks:</p>
+      <p class="margin">Subtasks:</p>
       ${subtasksHTML || "No subtasks"}
     </div>
+    <div class="dialogFooterPosition">
+    <div class="dialogFooter">
+    <div> <img src="../assets/img/delete.svg" alt="Delete"> Delete </div>
+    <div class="footerLine">  </div>
+    <div> <img src="../assets/img/edit.svg" alt="Edit"> Edit </div>
+    </div>
+    </div>
+  </div>
   `;
 
   document.getElementById("taskDialogOverlay").classList.add("open");
