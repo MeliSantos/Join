@@ -1,6 +1,9 @@
 const form = document.getElementById("registerForm");
+const passwordError = document.getElementById("passwordError");
+const termsError = document.getElementById("termsError");
+const emailError = document.getElementById("emailError");
 
-form.addEventListener("submit", function (event) {
+form.addEventListener("submit", async function (event) {
     event.preventDefault();
 
     const name = document.getElementById("Name").value;
@@ -9,20 +12,29 @@ form.addEventListener("submit", function (event) {
     const confirmPassword = document.getElementById("confirmPassword").value;
     const termsCheckbox = document.getElementById("option1").checked;
 
+    // Passwort prüfen
     if (password !== confirmPassword) {
         passwordError.textContent = "Die Passwörter stimmen nicht überein.";
         return;
     } else {
         passwordError.textContent = "";
     }
-    
 
-
+    // Terms prüfen
     if (!termsCheckbox) {
         termsError.textContent = "Bitte akzeptieren Sie die Privacy Policy, um fortzufahren.";
         return;
     } else {
         termsError.textContent = "";
+    }
+
+    // E-Mail Prüfung - ob bereits existiert
+    const emailExists = await checkEmailExists(email);
+    if (emailExists) {
+        emailError.textContent = "Diese E-Mail-Adresse ist bereits registriert!";
+        return;
+    } else {
+        emailError.textContent = "";
     }
 
     const user = {
@@ -35,28 +47,35 @@ form.addEventListener("submit", function (event) {
     sendToFirebase(user);
 });
 
+/**
+ * Prüft, ob die E-Mail bereits existiert
+ */
+async function checkEmailExists(email) {
+    try {
+        const response = await fetch("https://join-45b16-default-rtdb.europe-west1.firebasedatabase.app/users.json");
+        
+        if (!response.ok) {
+            throw new Error(`HTTP ${response.status}`);
+        }
+        
+        const existingUsers = await response.json();
+        
+        if (!existingUsers) {
+            return false;
+        }
+        
+        // Prüfe, ob Email bereits vorhanden ist
+        return Object.values(existingUsers).some(u => u.email === email);
+        
+    } catch (error) {
+        console.error("Fehler beim Prüfen der E-Mail:", error);
+        return false;
+    }
+}
+
 async function sendToFirebase(user) {
     try {
-        // Zuerst: Alle existierenden Benutzer laden
-        const usersResponse = await fetch("https://join-45b16-default-rtdb.europe-west1.firebasedatabase.app/users.json");
-        
-        if (!usersResponse.ok) {
-            throw new Error(`HTTP ${usersResponse.status}`);
-        }
-        
-        const existingUsers = await usersResponse.json();
-        
-        // Prüfen, ob Email bereits existiert
-        if (existingUsers) {
-            const emailExists = Object.values(existingUsers).some(u => u.email === user.email);
-            
-            if (emailExists) {
-                alert("Diese E-Mail-Adresse ist bereits registriert!");
-                return;
-            }
-        }
-        
-        // Email existiert nicht → Benutzer registrieren
+        // Benutzer registrieren
         const response = await fetch("https://join-45b16-default-rtdb.europe-west1.firebasedatabase.app/users.json", {
             method: "POST",
             headers: {
@@ -84,8 +103,8 @@ async function sendToFirebase(user) {
         alert("Registrierung erfolgreich!");
         form.reset();
         
-        // Optional: Zur Login-Seite weiterleiten
-         window.location.href = "./index.html";
+        // Zur Login-Seite weiterleiten
+        window.location.href = "./index.html";
         
     } catch (error) {
         console.error("Fehler beim Speichern:", error);
