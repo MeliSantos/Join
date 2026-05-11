@@ -38,13 +38,30 @@ async function loginUser(email, password) {
         if (foundUser) {
             console.log("Login successful:", foundUser);
 
+            // Regenerate initials from name to ensure they are correct
+            foundUser.initials = getInitialsFromName(foundUser.name);
+
             localStorage.setItem("currentUser", JSON.stringify(foundUser));
-            window.location.href = "./index.html";
+            window.location.href = "./summaryUser.html";
         } else {
             alert("Wrong email or password!");
         }
 
     } catch (error) {
         console.error("Error on login:", error);
+    }
+}
+
+/**
+ * Generate initials from full name (first letter of first and last name)
+ */
+function getInitialsFromName(fullName) {
+    const nameParts = fullName.trim().split(" ");
+    if (nameParts.length >= 2) {
+        // Take first letter of first name and first letter of last name
+        return (nameParts[0][0] + nameParts[nameParts.length - 1][0]).toUpperCase();
+    } else {
+        // If only one name, take first letter
+        return nameParts[0][0].toUpperCase();
     }
 }

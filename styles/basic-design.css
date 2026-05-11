@@ -45,12 +45,18 @@ body {
 }
 
 .userIcon {
-    background-color: white;
+    background-color: #2A3647;
+    color: white;
     width: 56px;
     height: 56px;
     margin-left: 16px;
-    border: 2px solid black;
+    border: 2px solid #2A3647;
     border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 16px;
 }
 
 .navLeftSide {

@@ -40,12 +40,26 @@ form.addEventListener("submit", async function (event) {
     const user = {
         name: name,
         email: email,
-        initials: name.charAt(0),
+        initials: getInitialsFromName(name),
         password: password
     };
 
     sendToFirebase(user);
 });
+
+/**
+ * Generate initials from full name (first letter of first and last name)
+ */
+function getInitialsFromName(fullName) {
+    const nameParts = fullName.trim().split(" ");
+    if (nameParts.length >= 2) {
+        // Take first letter of first name and first letter of last name
+        return (nameParts[0][0] + nameParts[nameParts.length - 1][0]).toUpperCase();
+    } else {
+        // If only one name, take first letter
+        return nameParts[0][0].toUpperCase();
+    }
+}
 
 /**
  * Prüft, ob die E-Mail bereits existiert
