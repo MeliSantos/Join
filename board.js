@@ -38,7 +38,7 @@ async function init() {
     currentUser = JSON.parse(userJSON);
     console.log("Current user:", currentUser.name);
   }
-  
+
   // Load tasks from Firebase
   await loadTasksFromFirebase();
   renderBoard();
@@ -51,23 +51,23 @@ async function loadTasksFromFirebase() {
   try {
     const response = await fetch(TASKS_DB_URL);
     if (!response.ok) throw new Error(`HTTP ${response.status}`);
-    
+
     const data = await response.json();
     if (!data) {
       tasks = [];
       tasksMap = {};
       return;
     }
-    
+
     // Convert Firebase object to array
     tasks = Object.entries(data).map(([key, task]) => ({
       id: key,
       ...task
     }));
-    
+
     // Store tasks in map for quick lookup
     tasksMap = Object.assign({}, data);
-    
+
     console.log("Loaded tasks from Firebase:", tasks);
   } catch (error) {
     console.error("Error loading tasks from Firebase:", error);
@@ -83,7 +83,7 @@ function getFilteredTasks() {
   if (!currentUser || currentUser.name === "Guest") {
     return tasks; // Guests see all tasks
   }
-  
+
   return tasks.filter(task => {
     // Show task if user is in assignedTo array
     return task.assignedTo && task.assignedTo.includes(currentUser.name);
@@ -139,14 +139,14 @@ function dragoverHandler(ev) {
 
 async function moveTo(status) {
   const taskId = currentDraggedTaskId;
-  
+
   // Find task in array
   const task = tasks.find(t => t.id === taskId);
   if (!task) return;
-  
+
   // Update local state
   task.status = status;
-  
+
   // Update in Firebase
   try {
     const updateUrl = `${TASKS_DB_URL.replace('.json', '')}/${taskId}.json`;
@@ -157,9 +157,9 @@ async function moveTo(status) {
       },
       body: JSON.stringify({ status: status })
     });
-    
+
     if (!response.ok) throw new Error(`HTTP ${response.status}`);
-    
+
     console.log("Task status updated in Firebase");
     renderBoard();
   } catch (error) {
@@ -191,13 +191,14 @@ function createTaskCard(task) {
     <h3>${task.title}</h3>
     <p class="description">${task.description}</p>
 
-    <div class="subtask-section">
-      <div class="progress-bar">
+      ${task.subtasks && task.subtasks.length > 0 ? `
+     <div class="subtask-section">
+       <div class="progress-bar">
         <div class="progress" style="width: ${progressPercent}%"></div>
-      </div>
-      <span class="progress-text">${progress} Subtasks</span>
     </div>
-
+    <span class="progress-text">${progress} Subtasks</span>
+  </div>
+` : ""}
     <div class="card-footer">
       <div class="assigned-to">
         ${assignedHTML}
@@ -279,10 +280,12 @@ function openTaskDialog(task) {
       ${assignedHTML}
     </div>
 
-    <div class="subtasks descriptionDialogue">
-      <p class="margin">Subtasks:</p>
-      ${subtasksHTML || "No subtasks"}
-    </div>
+    ${task.subtasks && task.subtasks.length > 0 ? `
+  <div class="subtasks descriptionDialogue">
+    <p class="margin">Subtasks:</p>
+    ${subtasksHTML}
+  </div>
+` : ""}
     <div class="dialogFooterPosition">
     <div class="dialogFooter">
     <div> <img src="../assets/img/delete.svg" alt="Delete"> Delete </div>
