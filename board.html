@@ -7,6 +7,7 @@
     <title>Join</title>
     <link rel="stylesheet" href="./styles/basic-design.css">
     <link rel="stylesheet" href="./styles/board.css">
+    <link rel="stylesheet" href="./styles/addTaskDialog.css">
 
 </head>
 
@@ -94,30 +95,92 @@
 
     <div id="addTaskOverlay" class="overlay" onclick="closeAddTask()"></div>
 
+
+
     <div id="addTaskPanel" class="add-task-panel">
-        <h2>Add Task</h2>
 
-        <input id="taskTitle" placeholder="Title">
 
-        <textarea id="taskDescription" placeholder="Description"></textarea>
+        <section class="contentRight">
+            <div class="mainDiv">
+                <div class="mainLeft">
+                    <div class="addTaskHeader">
+                        <div>
+                            <h1> Add Task </h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <section class="mainTask">
+                <div class="descriptionTask">
+                    <div class="title">
+                        <label for="title">Title*</label>
+                        <input type="text" id="title" name="title" placeholder="Enter a title">
+                    </div>
+                    <div class="description">
+                        <label for="des">Description</label>
+                        <input type="text" id="des" name="des" placeholder="Enter a description">
+                    </div>
+                    <div class="date">
+                        <label for="date">Date*</label>
+                        <input type="date" id="date" name="date" placeholder="dd/mm/yyyy">
+                    </div>
+                </div>
+                <div class="separateLine"></div>
+                <div class="infoTask">
+                    <section class="priority">
+                        <p class="priorityP">Priority</p>
+                        <div class="priorityOptions">
+                            <button class="priorityButton high">Urgent
+                                <img src="./assets/img/urgent.png" alt="Urgent">
+                            </button>
+                            <button class="priorityButton medium">Medium
+                                <img src="./assets/img/medium.png" alt="Medium">
+                            </button>
+                            <button class="priorityButton low">Low
+                                <img src="./assets/img/low.png" alt="Low">
+                            </button>
+                        </div>
+                    </section>
+                    <section class="assignedTo">
+                        <p class="assignedToP">Assigned to</p>
+                        <select name="assignedTo" id="assignedTo">
+                            <option value="">Select contacts to assign</option>
+                        </select>
+                    </section>
+                    <section class="assignedTo">
+                        <p class="assignedToP">Category*</p>
+                        <select name="category" id="category">
+                            <option value="">Select a category</option>
+                        </select>
+                    </section>
+                    <section class="assignedTo">
+                        <p class="assignedToP">Subtasks</p>
+                        <input type="text" id="subtask" name="subtask" placeholder="Enter a title">
+                        </select>
+                    </section>
+                </div>
 
-        <input type="date" id="taskDate">
+            </section>
 
-        <select id="taskPriority">
-            <option value="low">Low</option>
-            <option value="medium">Medium</option>
-            <option value="urgent">Urgent</option>
-        </select>
+            <section class="buttonLine">
+                <button type="button" class="btn2 btnContent" id="guestLogIn">Clear
+                    <img class="deletIcon" src="./assets/img/iconoir_cancel.png" alt="delete Icon">
+                </button>
+                <button type="button" class="btn1" id="createTaskBtn" onclick="createTask()">Create Task
+                    <img class="checkIcon" src="./assets/img/check.png" alt="check Icon">
+                </button>
+            </section>
+        </section>
 
-        <button onclick="createTask()">Create Task</button>
+        <div id="taskDialogOverlay" class="overlay" onclick="closeTaskDialog()"></div>
+
+        <div id="taskDialog" class="task-dialog">
+        </div>
+        <script src="./JS/userDisplay.js"></script>
+        <script src="./board.js"></script>
+
     </div>
 
-    <div id="taskDialogOverlay" class="overlay" onclick="closeTaskDialog()"></div>
-
-    <div id="taskDialog" class="task-dialog">
-    </div>
-<script src="./JS/userDisplay.js"></script>
-<script src="./board.js"></script>
 </body>
 
 </html>
