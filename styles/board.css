@@ -175,19 +175,27 @@ h1 {
 
 .add-task-panel {
   position: fixed;
-  top: 0;
-  right: -400px;
-  /* versteckt */
-  width: 400px;
-  height: 100%;
+  top: 50%;
+  right: -1200px;
+  transform: translateY(-50%);
+  width: 1116px;
+  max-height: 90vh;
   background: white;
-  padding: 20px;
-  transition: right 0.3s ease;
-  z-index: 10;
+  border-radius: 30px;
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.2);
+  transition: right 0.4s ease;
+  z-index: 30;
+  overflow-y: auto;
+  padding: 40px;
 }
 
 .add-task-panel.open {
-  right: 0;
+  right: 50%;
+  transform: translate(50%, -50%);
+}
+
+.add-task-panel .contentRight {
+  margin-top: 0;
 }
 
 .overlay.open {
@@ -459,3 +467,8 @@ span {
   margin-top: 20px;
   margin-bottom: 30px;
 }
+
+body.dialog-open {
+  overflow: hidden;
+}
+
