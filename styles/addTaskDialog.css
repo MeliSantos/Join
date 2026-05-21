@@ -1,0 +1,302 @@
+/* =========================
+   ADD TASK MODAL
+========================= */
+
+.add-task-panel {
+  position: fixed;
+
+  top: 50%;
+  right: -1400px;
+
+  transform: translateY(-50%);
+
+  width: 1116px;
+  max-height: 90vh;
+
+  background: white;
+
+  border-radius: 30px;
+
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.2);
+
+  transition: right 0.4s ease;
+
+  z-index: 30;
+
+  overflow-y: auto;
+
+  padding: 0;
+}
+
+.add-task-panel.open {
+  right: 50%;
+  transform: translate(50%, -50%);
+}
+
+/* scroll lock */
+
+body.dialog-open {
+  overflow: hidden;
+}
+
+/* content */
+
+.add-task-panel .contentRight {
+  flex: 1;
+  margin-top: 0;
+}
+
+/* header */
+
+.add-task-panel .addTaskHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 64px 64px 40px 64px;
+
+  max-width: 625px;
+  height: 73px;
+}
+
+.add-task-panel h1 {
+  font-size: 61px;
+  margin: 0;
+}
+
+/* main layout */
+
+.add-task-panel .mainTask {
+  width: calc(100% - 128px);
+
+  margin-left: 64px;
+
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+/* left */
+
+.add-task-panel .descriptionTask {
+  width: 440px;
+
+  display: flex;
+  flex-direction: column;
+
+  margin-right: 32px;
+}
+
+/* divider */
+
+.add-task-panel .separateLine {
+  width: 1px;
+
+  min-height: 424px;
+
+  background-color: #D1D1D1;
+
+  margin-right: 32px;
+}
+
+/* right */
+
+.add-task-panel .infoTask {
+  width: 440px;
+}
+
+/* inputs */
+
+.add-task-panel input {
+  width: 100%;
+
+  border: 1px solid #d1d1d1b3;
+
+  border-radius: 10px;
+
+  font-size: 20px;
+
+  font-weight: 400;
+
+  color: black;
+
+  box-sizing: border-box;
+}
+
+.add-task-panel input::placeholder {
+  padding-left: 12px;
+  color: #D1D1D1;
+}
+
+.add-task-panel label {
+  height: 24px;
+
+  font-size: 20px;
+
+  font-weight: 400;
+
+  color: #2A3647;
+
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+
+/* sections */
+
+.add-task-panel .title {
+  width: 100%;
+  margin-bottom: 24px;
+}
+
+.add-task-panel #title {
+  height: 48px;
+}
+
+.add-task-panel .description {
+  width: 100%;
+  margin-bottom: 24px;
+}
+
+.add-task-panel #des {
+  height: 120px;
+}
+
+.add-task-panel .date {
+  width: 100%;
+}
+
+.add-task-panel #date {
+  height: 48px;
+}
+
+/* priority */
+
+.add-task-panel .priority {
+  width: 100%;
+
+  margin-bottom: 24px;
+}
+
+.add-task-panel .priorityP {
+  font-size: 20px;
+  margin: 0;
+}
+
+.add-task-panel .priorityOptions {
+  margin-top: 16px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 12px;
+}
+
+/* buttons */
+
+.add-task-panel button {
+  height: 56px;
+
+  border: none;
+
+  border-radius: 10px;
+
+  font-size: 20px;
+
+  font-weight: 400;
+
+  background-color: white;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 10px;
+
+  cursor: pointer;
+}
+
+.add-task-panel .assignedTo {
+  width: 100%;
+
+  margin-bottom: 24px;
+}
+
+.add-task-panel .assignedToP {
+  font-size: 20px;
+  margin: 0;
+  color: #2A3647;
+}
+
+/* selects */
+
+.add-task-panel select {
+  width: 100%;
+
+  height: 48px;
+
+  border: 1px solid #d1d1d1b3;
+
+  border-radius: 10px;
+
+  font-size: 20px;
+
+  margin-top: 12px;
+
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+/* footer buttons */
+
+.add-task-panel .buttonLine {
+  display: flex;
+
+  justify-content: flex-end;
+
+  width: calc(100% - 128px);
+
+  margin: 48px 64px 64px 64px;
+
+  gap: 16px;
+}
+
+/* primary button */
+
+.add-task-panel .btn1 {
+  width: 183px;
+
+  font-weight: bold;
+
+  color: white;
+
+  background-color: #2A3647;
+}
+
+.add-task-panel .btn1:hover {
+  background-color: #29ABE2;
+
+  box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.3);
+}
+
+/* secondary button */
+
+.add-task-panel .btn2 {
+  width: 110px;
+
+  font-weight: bold;
+
+  color: #2A3647;
+
+  background-color: transparent;
+
+  border: 2px solid #2A3647;
+}
+
+.add-task-panel .btn2:hover {
+  border: 2px solid #29ABE2;
+
+  color: #29ABE2;
+
+  box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.3);
+}
