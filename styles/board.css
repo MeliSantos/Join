@@ -306,7 +306,7 @@ h1 {
 }
 
 .taskDialogContent {
-
+  padding-bottom: 40px;
   width: 445px;
 }
 
@@ -355,6 +355,7 @@ h1 {
 
 .task-dialog .subtasks {
   margin-top: 16px;
+
 }
 
 .catFontSize {
@@ -471,4 +472,3 @@ span {
 body.dialog-open {
   overflow: hidden;
 }
-
