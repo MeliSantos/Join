@@ -452,8 +452,9 @@ span {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 159px;
+  width: 170px;
   height: 24px;
+  gap: 10px;
 }
 
 .footerLine {
@@ -474,38 +475,43 @@ body.dialog-open {
   overflow: hidden;
 }
 
-.dialogFooterDelete {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
 
 .dialogFooterEdit {
   display: flex;
   align-items: center;
   gap: 10px;
+  background-repeat: no-repeat;
+  width: 150px;
+  height: 22px;
+  padding-left: 10px;
+  padding-right: 30px;
+  background-image: url(../assets/img/editMain.svg);
 }
 
-.dialogFooterEdit img {
-  width: 16px;
-  height: 18px;
-}
 
 .dialogFooterEdit:hover {
   color: #29ABE2;
   cursor: pointer;
+  font-weight: bold;
+  background-image: url(../assets/img/editHover.svg);
 }
 
-.dialogFooterDelete img {
-  width: 16px;
-  height: 18px;
-} 
+.dialogFooterDelete {
+  width: 100px;
+  padding-left: 20px;
+  padding-right: 55px;
+  background-repeat: no-repeat;
+  height: 22px;
+  background-image: url(../assets/img/deleteMain.svg);
+}
 
 .dialogFooterDelete:hover {
   color: #29ABE2;
   cursor: pointer;
+  font-weight: bold;
 }
 
-.dialogFooterDelete:hover img {
-  background-image: url(../assets/img/delete-hover.svg);
+.dialogFooterDelete:hover {
+
+  background-image: url(../assets/img/deleteHover.svg);
 }

@@ -401,9 +401,9 @@ function openTaskDialog(task) {
       ` : ""}
      <div class="dialogFooterPosition">
       <div class="dialogFooter"> 
-        <div class="dialogFooterDelete"> <img src="../assets/img/delete.svg" alt="Delete"> Delete </div>
+        <div class="dialogFooterDelete"> </div>
         <div class="footerLine"> </div> 
-        <div class="dialogFooterEdit"> <img src="../assets/img/edit.svg" alt="Edit"> Edit </div>
+        <div class="dialogFooterEdit"> </div>
       </div> 
      </div>
   </div>
