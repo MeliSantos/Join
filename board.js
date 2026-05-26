@@ -401,7 +401,7 @@ function openTaskDialog(task) {
       ` : ""}
      <div class="dialogFooterPosition">
       <div class="dialogFooter"> 
-        <div class="dialogFooterDelete"> </div>
+        <div class="dialogFooterDelete" onclick="deleteTask('${task.id}')"></div>
         <div class="footerLine"> </div> 
         <div class="dialogFooterEdit"> </div>
       </div> 
@@ -432,6 +432,51 @@ function closeTaskDialog() {
     .classList.remove("open");
 
   document.body.classList.remove("dialog-open");
+}
+
+/**
+ * Task löschen
+ */
+async function deleteTask(taskId) {
+
+  if (!confirm("Are you sure you want to delete this task? This cannot be undone.")) {
+    return;
+  }
+
+  try {
+
+    const deleteUrl = `${TASKS_DB_URL.replace('.json', '')}/${taskId}.json`;
+
+    const response = await fetch(deleteUrl, {
+
+      method: "DELETE",
+
+      headers: {
+        "Content-Type": "application/json"
+      }
+
+    });
+
+    if (!response.ok) {
+      throw new Error(`HTTP ${response.status}`);
+    }
+
+    console.log("Task deleted successfully");
+
+    closeTaskDialog();
+
+    await loadTasksFromFirebase();
+
+    renderBoard();
+
+  } catch (error) {
+
+    console.error("Error deleting task:", error);
+
+    alert("Task could not be deleted. Please try again.");
+
+  }
+
 }
 
 /**
