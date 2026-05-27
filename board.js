@@ -623,36 +623,40 @@ function closeAddTask() {
 /**
  * Priority Buttons
  */
+function setButtonIcon(button, white = false) {
+
+  const type = button.classList[1];
+
+  const icons = {
+    high: white ? "PrioUrgentWhite.svg" : "urgent.png",
+    medium: white ? "PrioMediumWhite.svg" : "medium.png",
+    low: white ? "PrioLowWhite.svg" : "low.png"
+  };
+
+  button.querySelector("img").src =
+    `./assets/img/${icons[type]}`;
+} 
+
 function initPriorityButtons() {
 
-  const buttons =
-    document.querySelectorAll(".priorityButton");
+  const buttons = document.querySelectorAll(".priorityButton");
 
-  buttons.forEach(button => {
+  buttons.forEach(button => button.addEventListener("click", () => {
 
-    button.addEventListener("click", () => {
+    const active = button.classList.contains("active");
 
-      buttons.forEach(btn =>
-        btn.classList.remove("active")
-      );
-
-      button.classList.add("active");
-
-      if (button.classList.contains("high")) {
-        selectedPriority = "urgent";
-      }
-
-      else if (button.classList.contains("medium")) {
-        selectedPriority = "medium";
-      }
-
-      else if (button.classList.contains("low")) {
-        selectedPriority = "low";
-      }
+    buttons.forEach(btn => {
+      btn.classList.remove("active");
+      setButtonIcon(btn);
     });
-  });
-}
 
+    if (!active) {
+      button.classList.add("active");
+      setButtonIcon(button, true);
+    }
+
+  }));
+}
 /**
  * No Task Messages
  */

@@ -318,13 +318,6 @@ h1 {
   padding-top: 40px;
 }
 
-.close-btn {
-  background: none;
-  border: none;
-  font-size: 24px;
-  cursor: pointer;
-}
-
 .task-dialog.open {
   right: 50%;
   transform: translate(50%, -50%);
@@ -514,4 +507,39 @@ body.dialog-open {
 .dialogFooterDelete:hover {
 
   background-image: url(../assets/img/deleteHover.svg);
+}
+
+.priorityButton.active.high {
+  background-color: #FF3D00;
+  font-weight: bold;
+  color: white;
+}
+
+.priorityButton.active.medium {
+  background-color: #FFA800;
+  color: white;
+  font-weight: bold;
+}
+
+.priorityButton.active.low {
+  background-color: #7AE229;
+  color: white;
+  font-weight: bold;
+}
+
+.close-btn {
+  width: 32px;
+  height: 32px;
+  border: none;
+  border-radius: 50%;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.close-btn:hover {
+  background-color: rgba(0, 0, 0, 0.08);
 }
