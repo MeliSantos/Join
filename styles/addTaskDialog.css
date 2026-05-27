@@ -52,11 +52,23 @@ body.dialog-open {
   display: flex;
   align-items: center;
   justify-content: space-between;
-
   padding: 64px 64px 40px 64px;
-
-  max-width: 625px;
   height: 73px;
+}
+
+.closeAddTaskbtn {
+    width: 32px !important;
+    height: 32px !important;
+    padding: 0;
+    border-radius: 50% !important;
+    background-color: transparent !important;
+    box-shadow: none !important;
+    gap: 0 !important;
+}
+
+.closeAddTaskbtn:hover {
+    background-color: rgba(0,0,0,0.08) !important;
+    cursor: pointer;
 }
 
 .add-task-panel h1 {
@@ -121,6 +133,8 @@ body.dialog-open {
   color: black;
 
   box-sizing: border-box;
+  margin: 0;
+  margin-top: 12px;
 }
 
 .add-task-panel input::placeholder {
@@ -163,6 +177,7 @@ body.dialog-open {
 
 .add-task-panel .date {
   width: 100%;
+  padding: 0;
 }
 
 .add-task-panel #date {
@@ -173,7 +188,7 @@ body.dialog-open {
 
 .add-task-panel .priority {
   width: 100%;
-
+  padding: 0;
   margin-bottom: 24px;
 }
 
@@ -212,8 +227,8 @@ body.dialog-open {
 }
 
 .add-task-panel button:hover {
-    cursor: pointer;
-    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.3);
 }
 
 .add-task-panel .assignedTo {
