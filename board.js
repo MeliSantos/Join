@@ -23,6 +23,7 @@ let tasksMap = {};
 
 let selectedPriority = "medium";
 let priorityInitialized = false;
+let filteredTasks = null;
 
 async function init() {
 
@@ -43,6 +44,14 @@ async function init() {
   document
     .getElementById("createTaskBtn")
     .addEventListener("click", createTask);
+
+  // search field event listener
+  const searchInput = document.querySelector(".inputSearch input");
+  if (searchInput) {
+    searchInput.addEventListener("input", (e) => {
+      searchTasks(e.target.value);
+    });
+  }
 }
 
 /**
@@ -95,7 +104,10 @@ function renderBoard() {
   document.getElementById("awaitingFeedback").innerHTML = "";
   document.getElementById("done").innerHTML = "";
 
-  tasks.forEach(task => {
+  // Verwende filterte Tasks wenn aktiv, sonst alle Tasks
+  const tasksToRender = filteredTasks !== null ? filteredTasks : tasks;
+
+  tasksToRender.forEach(task => {
 
     let card = createTaskCard(task);
 
@@ -194,6 +206,29 @@ function createTaskCard(task) {
   card.onclick = () => openTaskDialog(task);
 
   return card;
+}
+
+/**
+ * Tasks nach Titel oder Beschreibung suchen
+ */
+function searchTasks(searchText) {
+
+  const trimmedText = searchText.trim().toLowerCase();
+
+  if (trimmedText === "") {
+    // Wenn Suchfeld leer ist, zeige alle Tasks
+    filteredTasks = null;
+  } else {
+    // Filtere Tasks nach Titel oder Beschreibung
+    filteredTasks = tasks.filter(task => {
+      const titleMatch = task.title.toLowerCase().includes(trimmedText);
+      const descriptionMatch = task.description ? task.description.toLowerCase().includes(trimmedText) : false;
+      return titleMatch || descriptionMatch;
+    });
+  }
+
+  // Board neu rendern
+  renderBoard();
 }
 
 /**
