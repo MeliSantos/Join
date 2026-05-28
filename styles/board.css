@@ -543,7 +543,3 @@ body.dialog-open {
 .close-btn:hover {
   background-color: rgba(0, 0, 0, 0.08);
 }
-
-.required {
-  color: red;
-}

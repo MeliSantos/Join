@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="de">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Join Contacts</title>
+
+      <link rel="icon" href="./assets/icons/desktop/logoFavicon.svg" type="image/svg+xml" media="(prefers-color-scheme: light)" />
+      <link rel="icon" href="./assets/icons/desktop/logo.svg" type="image/svg+xml" media="(prefers-color-scheme: dark)" />
+
+      <script src="./scripts/app.js"></script>
+
+      <link rel="stylesheet" href="./styles/basic-design.css" />
+      <link rel="stylesheet" href="./styles/standard.css" />
+      <link rel="stylesheet" href="./styles/style.css" />
+      <link rel="stylesheet" href="./styles/components/navigation.css" />
+      <link rel="stylesheet" href="./styles/components/header.css" />
+      <link rel="stylesheet" href="./styles/components/dropdown.css" />
+      <link rel="stylesheet" href="./styles/components/app-shell.css" />
+      <link rel="stylesheet" href="./styles/components/app-shell-responsive.css" />
+      <link rel="stylesheet" href="./styles/components/buttons.css" />
+      <link rel="stylesheet" href="./styles/contacts/layout.css" />
+      <link rel="stylesheet" href="./styles/contacts/buttons.css" />
+      <link rel="stylesheet" href="./styles/contacts/modal.css" />
+      <link rel="stylesheet" href="./styles/contacts/responsive.css" />
+      <link rel="stylesheet" href="./styles/contacts/contact-unify.css" />
+   </head>
+   <body>
+      <div class="rotate-lock">Please rotate your device to portrait mode.</div>
+      <nav class="navBar">
+         <header class="navBar__logo logo">
+            <img class="logoIcon" src="./assets/icons/desktop/logo.svg" alt="Logo" />
+         </header>
+         <main class="navBar__menu">
+            <ul class="navBar__list list">
+               <li class="navBar__quicklink" id="nav-summary" onclick="window.location.href='./summaryUser.html'">
+                  <img src="./assets/icons/desktop/summary.svg" alt="" class="quicklink__icon" />
+                  <span>Summary</span>
+               </li>
+               <li class="navBar__quicklink" id="nav-add-task" onclick="window.location.href='./addTask.html'">
+                  <img src="./assets/icons/desktop/addTask.svg" alt="" class="quicklink__icon" />
+                  <span>Add Task</span>
+               </li>
+               <li class="navBar__quicklink" id="nav-board" onclick="window.location.href='./board.html'">
+                  <img src="./assets/icons/desktop/board.svg" alt="" class="quicklink__icon" />
+                  <span>Board</span>
+               </li>
+               <li class="navBar__quicklink navBar__quicklink--active" id="nav-contacts">
+                  <img src="./assets/icons/desktop/contacts.svg" alt="" class="quicklink__icon" />
+                  <span>Contacts</span>
+               </li>
+            </ul>
+         </main>
+         <footer class="navBar__legalInformation">
+            <a class="legalInformation" href="#">Privacy Policy</a>
+            <a class="legalInformation" href="#">Legal notice</a>
+         </footer>
+      </nav>
+      <section class="mainArea">
+         <header class="header">
+            <div class="header_flex-instructions topBar">
+               <img src="./assets/icons/desktop/Dark_Logo.svg" alt="Logo" class="logo__dark" />
+               <span class="topBar__name">Kanban Project Management Tool</span>
+               <section class="topBar__loginHelp">
+                  <span id="login__initials" class="login__initials"></span>
+               </section>
+            </div>
+         </header>
+         <div id="dropdownMenu" class="header__dropdown">
+            <ul class="header__dropdown-quicklinks">
+               <li class="header__dropdown-quicklink" id="dropdownLog">Close menu</li>
+            </ul>
+         </div>
+         <main class="main content_max-width">
+            <div class="main_flex-instructions">
+               <section class="headline">
+                  <div class="headline_contacts">
+                     <h1 class="headline__name">Contacts</h1>
+                  </div>
+               </section>
+               <div class="main-container">
+                  <section class="contacts-list">
+                     <div class="contacts-list__header">
+                        <button id="btn-add-contact" class="add-task-btn" onclick="openOverlay()">
+                           <span>Add new contact</span>
+                           <img class="add-task-btn__icon" src="./assets/icons/desktop/person_add.svg" alt="" />
+                        </button>
+                     </div>
+                     <div id="contacts-list-content"></div>
+                  </section>
+
+                  <section class="contacts-detail">
+                     <button type="button" id="btn-back-to-list" class="page-back-btn page-back-btn--mobile-only d-none" aria-label="Zur Kontaktliste zurück">
+                        <img src="./assets/icons/desktop/arrowBack.svg" alt="" class="page-back-btn__icon" />
+                     </button>
+                     <div id="detail-empty">
+                        <div class="headline_summary contacts-detail__empty-headline">
+                           <h1 class="headline__name">Contacts</h1>
+                           <img src="./assets/icons/desktop/headline__dividingLine.svg" alt="line" class="vertical-line-contacts" />
+                           <h3 class="headline__description">Better with a team</h3>
+                           <img class="horizontal-Line-contacts" src="./assets/icons/desktop/login__dividingLine.svg" alt="Line" />
+                        </div>
+                     </div>
+
+                     <div id="detail-view" class="detail-view d-none">
+                        <div class="detail-header">
+                           <div id="detail-initials" class="initials-big"></div>
+                           <div class="detail-meta">
+                              <h2 id="detail-name"></h2>
+                              <div class="detail-actions">
+                                 <button type="button" id="btn-edit" class="detail-action detail-action--edit">
+                                    <img src="./assets/icons/desktop/subtask__pencil.svg" alt="" class="detail-action__icon detail-action__icon--default" />
+                                    <img src="./assets/icons/desktop/editHover.svg" alt="" class="detail-action__icon detail-action__icon--hover" />
+                                    <span>Edit</span>
+                                 </button>
+                                 <button type="button" id="btn-delete" class="detail-action delete-link">
+                                    <img src="./assets/icons/desktop/subtask__trash.svg" alt="" class="detail-action__icon detail-action__icon--default" />
+                                    <img src="./assets/icons/desktop/deleteHover.svg" alt="" class="detail-action__icon detail-action__icon--hover" />
+                                    <span>Delete</span>
+                                 </button>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="detail-info">
+                           <h3>Contact Information</h3>
+                           <div class="detail-info-item">
+                              <strong>Email</strong>
+                              <a id="detail-email" href=""></a>
+                           </div>
+                           <div class="detail-info-item">
+                              <strong>Phone</strong>
+                              <span id="detail-phone"></span>
+                           </div>
+                        </div>
+                     </div>
+                     <button type="button" id="btn-contact-detail-menu" aria-label="Kontakt Aktionen" hidden>
+                        <img class="btn-add-contact__icon" src="./assets/icons/desktop/more_vert.svg" alt="" />
+                     </button>
+                     <div id="contact-detail-menu" class="contact-detail-menu d-none">
+                        <button type="button" id="btn-contact-detail-edit" class="contact-detail-menu__item">
+                           <img src="./assets/icons/desktop/subtask__pencil.svg" alt="" class="contact-detail-menu__icon" />
+                           <span>Edit</span>
+                        </button>
+                        <button type="button" id="btn-contact-detail-delete" class="contact-detail-menu__item">
+                           <img src="./assets/icons/desktop/subtask__trash.svg" alt="" class="contact-detail-menu__icon" />
+                           <span>Delete</span>
+                        </button>
+                     </div>
+                  </section>
+               </div>
+
+               <div id="overlay" class="overlay d-none" onclick="closeOverlay()">
+                  <div class="overlay-content" onclick="event.stopPropagation()">
+                     <button type="button" class="contact-modal__close" onclick="closeOverlay()" aria-label="Close contact dialog">
+                        <img src="./assets/icons/desktop/close.svg" alt="" />
+                     </button>
+
+                     <div class="contact-modal__brand">
+                        <img src="./assets/icons/desktop/logo.svg" alt="Join Logo" class="contact-modal__logo" />
+                        <h2 id="contact-form-title">Add Contact</h2>
+                        <p>Tasks are better with a team!</p>
+                        <span class="contact-modal__divider"></span>
+                     </div>
+                     <div class="contact-modal__body">
+                        <form id="contact-form" class="contact-modal__form">
+                           <div class="contact-modal__avatar" aria-hidden="true">
+                              <img src="./assets/icons/desktop/person_white.svg" alt="" />
+                              <span class="contact-modal__avatar-initials"></span>
+                           </div>
+
+                           <div class="contact-modal__fields">
+                              <div class="contact-modal__input-field contact-modal__input-field--required">
+                                 <label class="contact-modal__field" for="add-name">
+                                    <input type="text" id="add-name" placeholder="Name" />
+                                    <img src="./assets/icons/desktop/person.svg" alt="" />
+                                 </label>
+                                 <span class="login__input--required" data-error-for="add-name" data-default-message="This field is required" style="display: block; opacity: 0">This field is required</span>
+                              </div>
+
+                              <div class="contact-modal__input-field contact-modal__input-field--required">
+                                 <label class="contact-modal__field" for="add-email">
+                                    <input type="text" id="add-email" placeholder="Email" />
+                                    <img src="./assets/icons/desktop/mail.svg" alt="" />
+                                 </label>
+                                 <span class="login__input--required" data-error-for="add-email" data-default-message="This field is required" style="display: block; opacity: 0">This field is required</span>
+                              </div>
+
+                              <div class="contact-modal__input-field contact-modal__input-field--required">
+                                 <label class="contact-modal__field" for="add-phone">
+                                    <input type="text" id="add-phone" placeholder="Phone" />
+                                    <img src="./assets/icons/desktop/call.svg" alt="" />
+                                 </label>
+                                 <span class="login__input--required" data-error-for="add-phone" data-default-message="This field is required" style="display: block; opacity: 0">This field is required</span>
+                              </div>
+
+                              <div class="form-actions">
+                                 <button type="button" id="contact-form-cancel">Cancel</button>
+                                 <button type="submit" id="contact-form-submit">Create contact</button>
+                              </div>
+                           </div>
+                        </form>
+                     </div>
+                  </div>
+               </div>
+
+               <script src="./scripts/contacts-data.js"></script>
+               <script src="./scripts/contacts-responsive-view.js"></script>
+               <script src="./scripts/contacts-view.js"></script>
+               <script src="./scripts/contacts-form-validation.js"></script>
+               <script src="./scripts/contacts-form-ui.js"></script>
+               <script src="./scripts/contacts-form.js"></script>
+               <script src="./scripts/contacts.js"></script>
+            </div>
+         </main>
+      </section>
+   </body>
+</html>

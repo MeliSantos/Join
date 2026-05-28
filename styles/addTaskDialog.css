@@ -57,18 +57,18 @@ body.dialog-open {
 }
 
 .closeAddTaskbtn {
-  width: 32px !important;
-  height: 32px !important;
-  padding: 0;
-  border-radius: 50% !important;
-  background-color: transparent !important;
-  box-shadow: none !important;
-  gap: 0 !important;
+    width: 32px !important;
+    height: 32px !important;
+    padding: 0;
+    border-radius: 50% !important;
+    background-color: transparent !important;
+    box-shadow: none !important;
+    gap: 0 !important;
 }
 
 .closeAddTaskbtn:hover {
-  background-color: rgba(0, 0, 0, 0.08) !important;
-  cursor: pointer;
+    background-color: rgba(0,0,0,0.08) !important;
+    cursor: pointer;
 }
 
 .add-task-panel h1 {
@@ -266,16 +266,12 @@ body.dialog-open {
 .add-task-panel .buttonLine {
   display: flex;
 
-  justify-content: space-between;
+  justify-content: flex-end;
 
   width: calc(100% - 128px);
 
   margin: 48px 64px 64px 64px;
-}
 
-.add-task-panel .buttonLineContent {
-  display: flex;
-  justify-content: flex-end;
   gap: 16px;
 }
 
@@ -299,8 +295,8 @@ body.dialog-open {
 /* secondary button */
 
 .add-task-panel .btn2 {
-  width: 126px;
-  font-weight: 200;
+  width: 110px;
+  font-weight: bold;
   color: #2A3647;
   background-color: transparent !important;
   border: 2px solid #2A3647;
@@ -310,11 +306,4 @@ body.dialog-open {
   border: 2px solid #29ABE2;
   color: #29ABE2;
   box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.3);
-}
-
-.add-task-panel .checkIcon {
-  width: 16px;
-  height: 12px;
-  filter: brightness(0) invert(1);
-  overflow: hidden;
 }

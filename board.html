@@ -109,7 +109,7 @@
                         </div>
                         <div>
                             <button class="closeAddTaskbtn" onclick="closeAddTask()">
-                                <img src="./assets/img/close.svg" alt="close Icon">
+                                <img src="./assets/img/close.svg" alt="delete Icon">
                             </button>
                         </div>
                     </div>
@@ -118,7 +118,7 @@
             <section class="mainTask">
                 <div class="descriptionTask">
                     <div class="title">
-                        <label for="title" required>Title<span class="required">*</span></label>
+                        <label for="title">Title*</label>
                         <input type="text" id="title" name="title" placeholder="Enter a title">
                     </div>
                     <div class="description">
@@ -126,7 +126,7 @@
                         <input type="text" id="des" name="des" placeholder="Enter a description">
                     </div>
                     <div class="date">
-                        <label for="date" required>Due date<span class="required">*</span></label>
+                        <label for="date">Date*</label>
                         <input type="date" id="date" name="date" placeholder="dd/mm/yyyy">
                     </div>
                 </div>
@@ -153,7 +153,7 @@
                         </select>
                     </section>
                     <section class="assignedTo">
-                        <p class="assignedToP" required>Category<span class="required">*</span></p>
+                        <p class="assignedToP">Category*</p>
                         <select name="category" id="category">
                             <option value="">Select a category</option>
                         </select>
@@ -168,17 +168,12 @@
             </section>
 
             <section class="buttonLine">
-                <div>
-                    <p> <span class="required">*</span>This field is required </p>
-                </div>
-                <div class="buttonLineContent">
-                    <button type="button" class="btn2 btnContent cancel" id="guestLogIn" onclick="closeAddTask()">Cancel
-                        <img class="deletIcon" src="./assets/img/iconoir_cancel.png" alt="delete Icon">
-                    </button>
-                    <button type="button" class="btn1" id="createTaskBtn" onclick="createTask()">Create Task
-                        <img class="checkIcon" src="./assets/img/check.png" alt="check Icon">
-                    </button>
-                </div>
+                <button type="button" class="btn2 btnContent" id="guestLogIn">Clear
+                    <img class="deletIcon" src="./assets/img/iconoir_cancel.png" alt="delete Icon">
+                </button>
+                <button type="button" class="btn1" id="createTaskBtn" onclick="createTask()">Create Task
+                    <img class="checkIcon" src="./assets/img/check.png" alt="check Icon">
+                </button>
             </section>
         </section>
     </div>
