@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./styles/sign-up.css">
+    <link rel="stylesheet" href="./styles/login.css">
+
+</head>
+
+<body>
+    <header>
+        <div class="header_Login">
+            <div>
+                <img class="logo" src="./assets/img/Capa 2.png" alt="Join Logo">
+            </div>
+    </header>
+
+    <main>
+
+        <div class="SignUpCard">
+            <div>
+                <div class="logInSection">
+                     <a href="./index.html" class="arrowLeft"></a>
+                    <h1 class="loginTitle">Sign up</h1>
+                    <div class="blueLine"></div>
+                </div>
+                <form id="registerForm" class="loginForm">
+                    <div class="inputGroup">
+                        <input type="Name" id="Name" name="Name" placeholder="Name" required>
+                        <img src="./assets/img/person.png" class="inputIcon">
+                    </div>
+                    <div class="inputGroup">
+                        <input type="email" id="email" name="email" placeholder="Email" required>
+                        <img src="./assets/img/mail.png" class="inputIcon">
+                    </div>
+                    <div id="emailError" class="errorMessage"></div>
+                    <div class="inputGroup">
+                        <input type="password" id="password" name="password" placeholder="Password" required>
+                        <img src="./assets/img/lock.png" class="inputIcon">
+                    </div>
+                    <div class="inputGroup">
+                        <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm Password" required>
+                        <img src="./assets/img/lock.png" class="inputIcon">
+                    </div>
+                    <checkbox class="checkboxContainer" id="terms" name="terms" required>
+                        <input class="checkbox" type="checkbox" id="option1" name="option1" value="ja">
+                        <label for="terms" class="termsText">I accept the <a href="#" class="termsLink">Privacy Policy</a></label>
+                    </checkbox>
+                    <div id="passwordError" class="errorMessage"></div>
+                    <div id="termsError" class="errorMessage"></div>
+                    <div class="btnLogIn">
+                        <button type="submit" class="btn1 btnSignUpContent">Sign up</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </main>
+
+    <footer>
+        <div class="footerContent">
+            <a href="#" class="footerText">Privacy Policy</a>
+            <a href="#" class="footerText">Legal Notice</a>
+        </div>
+    </footer>
+</body>
+<script src="./JS/signUp.js"></script>
+
+</html>

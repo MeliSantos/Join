@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./styles/login.css">
+
+</head>
+
+<body onload="init()">
+    <header>
+        <div class="header_Login">
+            <div>
+                <img class="logo" src="./assets/img/Capa 2.png" alt="Join Logo">
+            </div>
+            <div class="logInHeader">
+                <div>
+                    <div class="notUser"> Not a Join user?</div>
+                </div>
+                <div class="btnContainer">
+                   <a href="./sign-up.html"><button class="btn1">Sign up</button></a> 
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+
+        <div class="loginCard">
+            <div>
+                <div class="logInSection">
+                    <h1 class="loginTitle">Log in</h1>
+                    <div class="blueLine"></div>
+                </div>
+                <form class="loginForm" id="loginForm">
+                    <div class="inputGroup">
+                        <input type="email" id="email" name="email" placeholder="Email" required>
+                        <img src="./assets/img/mail.png" class="inputIcon">
+                    </div>
+                    <div class="inputGroup">
+                        <input type="password" id="password" name="password" placeholder="Password" required>
+                        <img src="./assets/img/lock.png" class="inputIcon">
+                    </div>
+                    <div class="btnLogIn">
+                        <button type="submit" class="btn1 btnContent">Log in</button>
+                        <button type="button" class="btn2 btnContent" id="guestLogIn">Guest Log in</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </main>
+
+    <footer>
+        <div class="footerContent">
+            <a href="#" class="footerText">Privacy Policy</a>
+            <a href="#" class="footerText">Legal Notice</a>
+        </div>
+    </footer>
+</body>
+<script src="./login.js"></script>
+
+</html>

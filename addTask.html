@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join</title>
+    <link rel="stylesheet" href="./styles/basic-design.css">
+    <link rel="stylesheet" href="./styles/addTask.css">
+</head>
+
+<body>
+    <header class="mainHeader">
+        <span class="textHeader">Kanban Project Management Tool</span>
+        <div class="infoRight">
+            <img class="helpIcon" src="./assets/img/help.png" alt="help Icon">
+            <div class="userIcon"></div>
+        </div>
+    </header>
+            
+    <main>
+        <nav class="navLeftSide">
+            <div class="logo"></div>
+            <div class="navButtonContainer">
+                <a class="navButton" href="./summaryUser.html">Summary</a>
+                <a class="navButton" href="./addTask.html">Add Task</a>
+                <a class="navButton" href="./board.html">Board</a>
+                <a class="navButton" href="./contacts.html">Contacts</a>
+            </div>
+
+            <div class="navFooter">
+                <div class="footerContent">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Legal notice</a>
+                </div>
+            </div>
+        </nav>
+
+        <section class="contentRight">
+            <div class="mainDiv">
+                <div class="mainLeft">
+                    <div class="addTaskHeader">
+                        <div>
+                            <h1> Add Task </h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <section class="mainTask">
+                <div class="descriptionTask">
+                    <div class="title">
+                        <label for="title">Title*</label>
+                        <input type="text" id="title" name="title" placeholder="Enter a title">
+                    </div>
+                    <div class="description">
+                        <label for="des">Description</label>
+                        <input type="text" id="des" name="des" placeholder="Enter a description">
+                    </div>
+                    <div class="date">
+                        <label for="date">Date*</label>
+                        <input type="date" id="date" name="date" placeholder="dd/mm/yyyy">
+                    </div>
+                </div>
+                <div class="separateLine"></div>
+                <div class="infoTask">
+                    <section class="priority">
+                        <p class="priorityP">Priority</p>
+                        <div class="priorityOptions">
+                            <button class="priorityButton high">Urgent
+                                <img src="./assets/img/urgent.png" alt="Urgent">
+                            </button>
+                            <button class="priorityButton medium">Medium
+                                <img src="./assets/img/medium.png" alt="Medium">
+                            </button>
+                            <button class="priorityButton low">Low
+                                <img src="./assets/img/low.png" alt="Low">
+                            </button>
+                        </div>
+                    </section>
+                    <section class="assignedTo">
+                        <p class="assignedToP">Assigned to</p>
+                        <select name="assignedTo" id="assignedTo">
+                            <option value="">Select contacts to assign</option>
+                        </select>
+                    </section>
+                    <section class="assignedTo">
+                        <p class="assignedToP">Category*</p>
+                        <select name="category" id="category">
+                            <option value="">Select a category</option>
+                        </select>
+                    </section>
+                    <section class="assignedTo">
+                        <p class="assignedToP">Subtasks</p>
+                        <input type="text" id="subtask" name="subtask" placeholder="Enter a title">
+                        </select>
+                    </section>
+                </div>
+
+            </section>
+
+            <section class="buttonLine">
+                <button type="button" class="btn2 btnContent" id="guestLogIn">Clear
+                    <img class="deletIcon" src="./assets/img/iconoir_cancel.png" alt="delete Icon">
+                </button>
+                <button type="button" class="btn1" id="createTaskBtn">Create Task
+                    <img class="checkIcon" src="./assets/img/check.png" alt="check Icon">
+                </button>
+            </section>
+        </section>
+
+
+    </main>
+<script src="./JS/userDisplay.js"></script>
+<script src="./JS/addTask.js"></script>
+</body>
+
+</html>

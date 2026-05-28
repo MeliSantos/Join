@@ -1,0 +1,109 @@
+.logo {
+    width: 100px;
+    padding: 64px;
+    height: 125px;
+}
+
+.header_Login {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logInHeader {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.SignUpCard {
+    background-color: #ffffff;
+    border-radius: 25px;
+    padding: 40px;
+    width: 500px;
+    height: 530px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btnSignUpContent {
+    padding: 12px 24px;
+    font-size: 20px;
+    font-weight: 700;
+}
+.termsText{
+    font-size: 16px;
+    color: #A8A8A8;
+}
+
+.termsLink{
+    color: #29ABE2;
+    text-decoration: none;
+}
+
+.checkboxContainer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.checkbox {
+    width: 20px;
+}
+
+input[type="checkbox"] {
+  accent-color: #2A3647;
+  width: 24px;
+  height: 24px;
+}
+
+.checkbox:hover {
+    cursor: pointer;
+}
+
+.errorMessage {
+    color: #ff4444;
+    font-size: 14px;
+    margin-top: 8px;
+    display: block;
+}
+
+.logInSection {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.arrowLeft {
+   position: absolute;
+    left: -20px;
+    top: 50%;
+    transform: translateY(-110%);
+    background-image: url('../assets/img/arrow-left-line.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 32px;
+    height: 32px;
+    border: none;
+    background-color: transparent;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+}
+
+.arrowLeft:hover {
+    cursor: pointer;
+    background-color: #f0f0f0;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    transform: translateY(-110%) scale(1.05);
+    padding: 8px;
+}

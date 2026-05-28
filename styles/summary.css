@@ -1,0 +1,178 @@
+@font-face {
+    font-family: 'Inter';
+    src: url('./assets/fonts/Inter-VariableFont_opsz\,wght.ttf') format('truetype');
+}
+
+body {
+    background-color: #f6f7f8;
+    margin: 0;
+    font-family: 'Inter';
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    display: flex;
+}
+
+.mainSection {
+    display: flex;
+    flex: 1;
+}
+
+.contentRight {
+    flex: 1;
+    margin-top: 100px;
+}
+
+.blueSeparationLine {
+    width: 3px;
+    border-radius: 8px;
+    height: 59px;
+    background-color: #29ABE2;
+}
+
+.summaryHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 100px 0px 50px 100px;
+    max-width: 625px;
+    height: 73px;
+}
+
+h1 {
+    font-size: 60px;
+}
+
+h3 {
+    font-size: 27px;
+    font-weight: 400;
+}
+
+.summaryMainContent {
+    padding: 0 0px 10px 100px;
+    max-width: 560px;
+}
+
+.firstSectionSummary {
+    display: flex;
+    gap: 30px;
+}
+
+.summaryFirstCard {
+    background-color: #ffffff;
+    border-radius: 15px;
+    width: 264px;
+    height: 168px;
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+
+}
+
+.secondSectionSummary {
+    display: flex;
+    margin-top: 20px;
+}
+
+.summarySecondCard {
+    background-color: #ffffff;
+    border-radius: 15px;
+    width: 560px;
+    height: 168px;
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.thirdSectionSummary {
+    display: flex;
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.summaryThirdCard {
+    background-color: #ffffff;
+    border-radius: 15px;
+    width: 168px;
+    height: 168px;
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.mainDiv {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.mainRight {
+    display: flex;
+    padding-top: 200px;
+    align-items: center;
+    width: 385px;
+}
+
+h2 {
+    font-size: 47px;
+    font-weight: 400;
+    color: #2A3647;
+}
+
+.mainLeft {
+    width: 725px;
+}
+
+.tasksNumber {
+    font-size: 64px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.statusTasks {
+    font-size: 20px;
+    font-weight: 400;
+    text-align: center;
+}
+.secondCardLeft{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+.separationLine{
+    width: 2px;
+    border-radius: 8px;
+    height: 102px;
+    background-color: #D1D1D1;
+}
+.currentDate{
+    font-size: 21px;
+    font-weight: 700;
+    color: #2A3647;
+}
+.deadlineContent{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.subtext{
+    font-size: 16px;
+    font-weight: 400;
+    color: #2A3647;
+}
+
+.name {
+    color: #29ABE2;
+    font-weight: 700;
+    font-size: 64px;
+}
