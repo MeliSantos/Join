@@ -1,0 +1,254 @@
+.overview {
+   position: relative;
+   width: 100%;
+   padding: 0 0 32px 108px;
+   display: flex;
+   align-items: center;
+   gap: 64px;
+}
+
+.overview__summary {
+   width: 560px;
+   height: 562px;
+   display: flex;
+   flex-direction: column;
+   gap: 28px;
+}
+
+.headline_summary {
+   padding: 206px 64px 48px 108px;
+   display: flex;
+   align-items: center;
+   gap: 30px;
+}
+
+.horizontal-Line {
+   display: none;
+}
+
+.summary__card {
+   display: flex;
+   border-radius: 30px;
+   filter: drop-shadow(0 0 4px rgba(0, 0, 0, 0.1));
+   background-color: #fff;
+   transform-origin: left;
+   transition: all 100ms;
+}
+
+.summary__card:nth-child(2) {
+   transform-origin: center;
+}
+
+.summary__card:last-child {
+   transform-origin: right;
+}
+
+.summary__card.summary__urgent {
+   transform-origin: left top;
+}
+
+.summary__card:hover {
+   color: #fff;
+   filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.25));
+   background-color: #2b3647;
+   transform: scaleX(1.07) scaleY(1.09);
+   cursor: pointer;
+}
+
+.summary__card.summary__urgent:hover {
+   transform: scaleX(1.03) scaleY(1.09);
+}
+
+.summary__card:hover .summary__text {
+   color: #fff;
+}
+
+.summary__card:hover .todo__icon--circle {
+   fill: #fff;
+}
+
+.summary__card:hover .todo__icon--pencil {
+   fill: #2b3647;
+}
+
+.summary__card:hover .todo__icon--checked {
+   stroke: #2b3647;
+}
+
+.summary__card:active {
+   color: #000;
+   filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.25));
+   background-color: #fff;
+   cursor: pointer;
+}
+
+.summary__card:active .summary__text {
+   color: #2b3647;
+}
+
+.summary__card:active .todo__icon--circle {
+   fill: #2b3647;
+}
+
+.summary__card:active .todo__icon--pencil {
+   fill: #fff;
+}
+
+.summary__card:active .todo__icon--checked {
+   stroke: #fff;
+}
+
+.summary__number {
+   font-size: 64px;
+   font-weight: 600;
+}
+
+.summary__text {
+   font-size: 20px;
+   font-weight: 400;
+   color: #2a3647;
+}
+
+.summary__todo {
+   display: flex;
+   flex: 1;
+   gap: 28px;
+}
+
+.todo__card {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   flex: 1;
+   gap: 18px;
+}
+
+.summary__urgent {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   flex: 1;
+   gap: 61px;
+}
+
+.urgent__priority {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   gap: 18px;
+}
+
+.urgent__icon {
+   height: 60px;
+}
+
+.priority__card {
+   display: flex;
+   align-items: center;
+   flex-direction: column;
+}
+
+.priority__text {
+   font-size: 16px;
+   font-weight: 400;
+   color: #2a3647;
+}
+
+.urgent__dividingLine {
+   height: 102px;
+}
+
+.urgent__date {
+   display: flex;
+   justify-content: center;
+   flex-direction: column;
+   gap: 13px;
+}
+
+.date__number {
+   font-size: 21px;
+   font-weight: 700;
+}
+
+.date__deadline {
+   font-size: 16px;
+   font-weight: 400;
+}
+
+.summary__tasks {
+   display: flex;
+   flex: 1;
+   gap: 28px;
+}
+
+.tasks__card {
+   text-align: center;
+   justify-content: center;
+   align-items: center;
+   flex: 1;
+   flex-direction: column;
+}
+
+.overview__greetings {
+   display: flex;
+   flex: 1;
+   flex-direction: column;
+   gap: 3px;
+}
+
+.greetings__timeannouncement {
+   font-size: 47px;
+   font-weight: 500;
+}
+
+.greetings__name {
+   font-size: 64px;
+}
+
+.greetings__name--secondary {
+   color: #29abe2;
+}
+
+.summary-greeting-active .headline {
+   display: none;
+}
+
+.summary-greeting-active .overview {
+   min-height: calc(100vh - 80px);
+   padding-left: 0;
+   justify-content: center;
+}
+
+.summary-greeting-active .overview__summary {
+   display: none;
+}
+
+.summary-greeting-active .overview__greetings {
+   text-align: center;
+   width: 100%;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+.greeting-fullscreen {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   flex-direction: column;
+   gap: 8px;
+}
+
+.summary-fade-in .headline,
+.summary-fade-in .overview__summary {
+   animation: summary-content-fade-in 400ms ease-in;
+}
+
+@keyframes summary-content-fade-in {
+   from {
+      opacity: 0;
+   }
+   to {
+      opacity: 1;
+   }
+}
