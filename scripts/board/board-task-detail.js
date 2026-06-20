@@ -209,11 +209,21 @@
    }
 
    /**
-    * Binds the detail subtask list.
-    * @returns {void} Nothing.
-    */
+   * Binds the detail subtask list.
+   * @returns {void} Nothing.
+   */
    function bindTaskDetailSubtasks() {
-      document.getElementById("taskDetailSubtasksList")?.addEventListener("change", handleTaskDetailSubtaskToggle);
+      const subtaskList = document.getElementById("taskDetailSubtasksList");
+      if (!subtaskList) return;
+
+      subtaskList.addEventListener("click", (event) => {
+         event.stopPropagation();
+      });
+
+      subtaskList.addEventListener("change", (event) => {
+         event.stopPropagation();
+         handleTaskDetailSubtaskToggle(event);
+      });
    }
 
    /**

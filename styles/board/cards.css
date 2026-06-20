@@ -74,8 +74,9 @@
    font-weight: 400;
    line-height: 1.2;
    color: #a8a8a8;
-   height: 38px;
+   min-height: 38px;
    margin-bottom: 16px;
+   overflow: hidden;
 }
 
 .task-card__progress {

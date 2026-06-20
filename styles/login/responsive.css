@@ -154,3 +154,39 @@
         left: -54px;
     }
 }
+
+/* Final mobile login polish: keep the logo in the normal page flow while scrolling. */
+@media (max-width: 600px) {
+    .splash__logo {
+        position: absolute;
+        top: 28px;
+        left: 16px;
+        width: 64px;
+        transform: translate(0, 0);
+    }
+
+    .main-content,
+    .main-content--signup {
+        min-height: 100svh;
+    }
+
+    .main-content main,
+    .main-content--signup main {
+        height: auto;
+        min-height: 100svh;
+        align-items: flex-start;
+        padding-top: 120px;
+        padding-bottom: 120px;
+    }
+
+    .main-content--signup-logo {
+        position: absolute;
+        top: 28px;
+        left: 16px;
+        width: 64px;
+    }
+
+    .login__window {
+        margin-top: 0;
+    }
+}

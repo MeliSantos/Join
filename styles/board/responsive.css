@@ -53,6 +53,7 @@
 
    .board-task-directory {
       flex-direction: row;
+      align-items: flex-start;
       overflow: visible;
    }
 
@@ -96,15 +97,17 @@
 
 @media (max-width: 620px) {
    .headline_board {
-      padding: 144px 16px 28px;
+      padding: 118px 12px 18px;
    }
 
    .board-task-grid {
-      padding: 0 16px 150px 16px;
+      padding: 0 12px 120px 12px;
+      gap: 22px;
    }
 
    .find-task--mobile {
-      padding: 8px 16px;
+      padding: 4px 12px;
+      gap: 8px;
    }
 
    .task-card__move-button {

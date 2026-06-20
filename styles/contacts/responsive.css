@@ -274,3 +274,38 @@
       gap: 10px;
    }
 }
+
+@media (max-width: 820px) {
+   .contacts-detail {
+      padding: 0 8px;
+   }
+
+   .detail-view {
+      width: 100%;
+      max-width: 100%;
+      padding-top: 12px;
+   }
+
+   .detail-info {
+      width: 100%;
+      max-width: 100%;
+      gap: 14px;
+   }
+
+   .detail-info-item {
+      width: 100%;
+      max-width: 100%;
+      gap: 6px;
+   }
+
+   #detail-email,
+   #detail-phone {
+      display: block;
+      max-width: 100%;
+      font-size: 14px;
+      line-height: 1.4;
+      white-space: normal;
+      overflow-wrap: anywhere;
+      word-break: break-word;
+   }
+}
